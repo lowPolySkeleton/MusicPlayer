@@ -119,9 +119,69 @@ var sData = {
         "name": "Naked Glow",
         "game": "Ridge Racer Type 4"
     },
+    31:{
+        "name": "Out of Control",
+        "game": "Revolt"
+    },
+    32:{
+        "name": "Black Winter Night Sky",
+        "game": "TEKKEN 2"
+    },
+    33:{
+        "name": "Skerries",
+        "game": "Blast Corps"
+    },
+    34:{
+        "name": "Big Snowman",
+        "game": "Snowboard Kids"
+    },
+    35:{
+        "name": "Sunny Mountain",
+        "game": "Snowboard Kids 2"
+    },
+    36:{
+        "name": "Linda's Castle",
+        "game": "Snowboard Kids 2"
+    },
+    37:{
+        "name": "Secret of the Forest",
+        "game": "Chrono Trigger"
+    },
+    38:{
+        "name": "Corridors of Time",
+        "game": "Chrono Trigger"
+    },
+    39:{
+        "name": "File Select",
+        "game": "Super Mario 64"
+    },
+    40:{
+        "name": "Dire Dire Docks",
+        "game": "Super Mario 64"
+    },
+    41:{
+        "name": "Black Mage Village",
+        "game": "Final Fantasy IX"
+    },
+    42:{
+        "name": "Flutter vs The Gesellschaft",
+        "game": "Mega Man Legends"
+    },
+    43:{
+        "name": "Corneria",
+        "game": "Star Fox"
+    },
+    44:{
+        "name": "Flying Battery Zone Act 1",
+        "game": "Sonic Mania"
+    },
+    45:{
+        "name": "Lava Reef Zone Act 1",
+        "game": "Sonic 3 & Knuckles"
+    },
 }
 
-var nums = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30];
+var nums = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45];
 var gen_nums = [];
 
 function in_array(array, el) {
