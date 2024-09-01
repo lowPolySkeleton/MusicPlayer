@@ -46,7 +46,6 @@ body, html{
     top: 0;
     height: 100%;
     background: linear-gradient(90deg, rgba(254,255,190,1) 0%, rgba(255,207,234,1) 33%, rgba(191,185,255,1) 66%, rgba(175,233,255,1) 100%);
-    background-attachment: fixed;
     opacity: 0.8;
     transition: all ease 250ms;
   }
