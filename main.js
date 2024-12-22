@@ -261,7 +261,7 @@ function playlist() {
     audioPlayer.addEventListener('ended', function(){
         var nextTrackNum = get_rand(nums);
         nextSong = 'tracks/' + nextTrackNum + '.mp3';
-        trackInfo.innerHTML = '<b>' + sData[nextTrackNum].name + '</b><br>' + sData[nextTrackNum].game
+        trackInfo.innerHTML = `<b>${sData[nextTrackNum].name}</b> : ${sData[nextTrackNum].game}`
         console.log(nextSong)
         audioPlayer.src = nextSong;
         audioPlayer.load(); 
@@ -272,7 +272,7 @@ function playlist() {
 
 var firstTrackNum = get_rand(nums);
 var nextSong = 'tracks/' + firstTrackNum + '.mp3';
-trackInfo.innerHTML = '<b>' + sData[firstTrackNum].name + '</b><br>' + sData[firstTrackNum].game
+trackInfo.innerHTML = `<b>${sData[firstTrackNum].name}</b> : ${sData[firstTrackNum].game}`
 console.log(nextSong)
 audioPlayer.src = nextSong;
 
