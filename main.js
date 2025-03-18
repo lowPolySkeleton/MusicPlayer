@@ -373,3 +373,32 @@ console.log(nextSong)
 audioPlayer.src = nextSong;
 
 playlist();
+
+const params = new URLSearchParams(window.location.search);
+const channel = params.get('channel') || 'lowpolyskeleton';
+const client = new tmi.Client({
+  connection: {
+    secure: true,
+    reconnect: true,
+  },
+  channels: [channel],
+});
+
+client.connect().then(() => {
+  console.log('connected')
+});
+
+client.on('message', (wat, tags, message, self) => {
+
+    if(message.startsWith("!skip") && tags.username == "lowpolyskeleton"){
+        var nextSong = '';
+        var nextTrackNum = get_rand(nums);
+        nextSong = 'tracks/' + nextTrackNum + '.mp3';
+        trackInfo.innerHTML = `<b>${sData[nextTrackNum].name}</b> : ${sData[nextTrackNum].game}`
+        console.log(nextSong)
+        audioPlayer.src = nextSong;
+        audioPlayer.load(); 
+        audioPlayer.play();
+    }
+
+});
