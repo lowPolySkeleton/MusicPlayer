@@ -191,9 +191,105 @@ var sData = {
         "name": "Kieran and Terapagos Battle Music",
         "game": "Pokemon Scarlet & Violet: Indigo Disk"
     },
+    49:{
+        "name": "Area A",
+        "game": "Shatterhand"
+    },
+    50:{
+        "name": "Cat",
+        "game": "Minecraft"
+    },
+    51:{
+        "name": "The Wind Can Be Still (Winter Theme)",
+        "game": "Stardew Valley"
+    },
+    52:{
+        "name": "File Select",
+        "game": "Gravity Circuit"
+    },
+    53:{
+        "name": "Strike the Earth! Plains of Passage",
+        "game": "Shovel Knight"
+    },
+    54:{
+        "name": "Last Surprise",
+        "game": "Persona 5"
+    },
+    55:{
+        "name": "Narita One",
+        "game": "Narita Boy"
+    },
+    56:{
+        "name": "Investigation ~ Cornered",
+        "game": "Phoenix Wright: Ace Attorney"
+    },
+    57:{
+        "name": "Stamp Theme [Battle Version]",
+        "game": "Final Fantasy VII Rebirth"
+    },
+    58:{
+        "name": "Kyrie's Theme",
+        "game": "Final Fantasy VII Rebirth"
+    },
+    59:{
+        "name": "Main Theme",
+        "game": "Pepper Grinder"
+    },
+    60:{
+        "name": "Solace Tomorrow",
+        "game": "EX-Zodiac"
+    },
+    61:{
+        "name": "Home Theme",
+        "game": "World of Horror"
+    },
+    62:{
+        "name": "Calling",
+        "game": "The World Ends With You"
+    },
+    63:{
+        "name": "That Name Was Engraved Into the 100th Volume!",
+        "game": "Etrian Odyssey"
+    },
+    64:{
+        "name": "Main Theme",
+        "game": "Fantasian Neo Dimension"
+    },
+    65:{
+        "name": "Divide",
+        "game": "Hotline Miami 2: Wrong Number"
+    },
+    66:{
+        "name": "You Will Know Our Names",
+        "game": "Xenoblade Chronicles: Definitive Edition"
+    },
+    67:{
+        "name": "Wave Circuit (Medley's Theme)",
+        "game": "Gravity Circuit"
+    },
+    68:{
+        "name": "Color Your Night",
+        "game": "Persona 3 Reload"
+    },
+    69:{
+        "name": "Battle at the Big Bridge",
+        "game": "Final Fantasy V"
+    },
+    70:{
+        "name": "Wave 131",
+        "game": "Streets Of Rage 2"
+    },
+    71:{
+        "name": "Ocean Palace",
+        "game": "Sonic Heroes"
+    },
+    72:{
+        "name": "Arena 1",
+        "game": "One Must Fall 2097"
+    },
 }
 
-var nums = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48];
+var nums = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72];
 var gen_nums = [];
 
 function in_array(array, el) {
