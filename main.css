@@ -17,15 +17,72 @@ body, html{
     color: #313233;
 }
 .audio__player {
-    padding: 20px 30px 40px 30px;
-    max-width: 100%;
-    background-color: #efefef;
+    position: relative;
+    margin-top: 20px;
+    padding: 20px 30px 40px 50px;
+    max-width: 1000px;
+    background: linear-gradient(90deg, #feffbe 0%, #ffcfea 33%, #bfb9ff 66%, #afe9ff 100%);
+    clip-path: polygon(30% 0%, 70% 0%, 100% 11%, 100% 70%, 94% 100%, 28% 100%, 3% 88%, 0 9%);
+  }
+  .polygon{
+    z-index: 1;
+    position: absolute;
+    mix-blend-mode: soft-light;
+    background: linear-gradient(90deg, #feffbe 0%, #ffcfea 33%, #bfb9ff 66%, #afe9ff 100%);
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+    width: 20%;
+    height: 150%;
+  }
+  .polygon:nth-child(1) {
+    top: -20%;
+    left: -15%;
+  }
+  .polygon:nth-child(2) {
+    top: -40%;
+    left: 15%;
+  }
+  .polygon:nth-child(3){
+    top: -20%;
+    left: 30%;
+    width: 40%;
+    height: 150%;
+  }
+  .polygon:nth-child(4){
+    top: -30%;
+    left: 60%;
+    width: 20%;
+    height: 150%;
+  }
+  .polygon:nth-child(5){
+    top: 0%;
+    left: 10%;
+    width: 50%;
+    height: 150%;
+  }
+  .polygon:nth-child(6){
+    top: -50%;
+    left: 40%;
+    width: 40%;
+    height: 100%;
+  }
+  .polygon:nth-child(7){
+    top: -20%;
+    left: 50%;
+    width: 70%;
+    height: 150%;
+  }
+  .polygon:nth-child(8){
+    top: -20%;
+    left: 85%;
+    width: 100%;
+    height: 150%;
   }
   .audio__controls {
     position: relative;
     display: flex;
     align-items: center;
     margin: auto;
+    z-index: 2;
   }
   .audio__timeline {
     position: relative;
@@ -45,7 +102,7 @@ body, html{
     left: 0;
     top: 0;
     height: 100%;
-    background: linear-gradient(90deg, rgba(254,255,190,1) 0%, rgba(255,207,234,1) 33%, rgba(191,185,255,1) 66%, rgba(175,233,255,1) 100%);
+    background: #efefef;
     opacity: 0.8;
     transition: all ease 250ms;
   }
@@ -53,8 +110,10 @@ body, html{
     font-size: 23px;
   }
   #trackInfo{
+    position: relative;
     font-size: 45px;
     line-height: 80%;
+    z-index: 2;
   }
   .audio__timeline-current {
     float: left;
