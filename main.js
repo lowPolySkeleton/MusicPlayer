@@ -368,7 +368,7 @@ function playlist() {
     audioPlayer.addEventListener('ended', function(){
         var nextTrackNum = get_rand(nums);
         nextSong = 'tracks/' + nextTrackNum + '.mp3';
-        trackInfo.innerHTML = `<b>${sData[nextTrackNum].name}</b> : ${sData[nextTrackNum].game}`
+        trackInfo.innerHTML = `${sData[nextTrackNum].name} - ${sData[nextTrackNum].game}`
         console.log(nextSong)
         audioPlayer.src = nextSong;
         audioPlayer.load(); 
