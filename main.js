@@ -373,6 +373,7 @@ function playlist() {
         audioPlayer.src = nextSong;
         audioPlayer.load(); 
         audioPlayer.play();
+        document.title = `${sData[nextTrackNum].name} - ${sData[nextTrackNum].game}`
     });
     
 }
@@ -382,6 +383,7 @@ var nextSong = 'tracks/' + firstTrackNum + '.mp3';
 trackInfo.innerHTML = `${sData[firstTrackNum].name} - ${sData[firstTrackNum].game}`
 console.log(nextSong)
 audioPlayer.src = nextSong;
+document.title = `${sData[firstTrackNum].name} - ${sData[firstTrackNum].game}`
 
 playlist();
 
@@ -410,6 +412,7 @@ client.on('message', (wat, tags, message, self) => {
         audioPlayer.src = nextSong;
         audioPlayer.load(); 
         audioPlayer.play();
+        document.title = `${sData[nextTrackNum].name} - ${sData[nextTrackNum].game}`
     }
 
 });
