@@ -405,7 +405,7 @@ client.on('message', (wat, tags, message, self) => {
         var nextSong = '';
         var nextTrackNum = get_rand(nums);
         nextSong = 'tracks/' + nextTrackNum + '.mp3';
-        trackInfo.innerHTML = `<b>${sData[nextTrackNum].name}</b> : ${sData[nextTrackNum].game}`
+        trackInfo.innerHTML = `${sData[firstTrackNum].name} - ${sData[firstTrackNum].game}`
         console.log(nextSong)
         audioPlayer.src = nextSong;
         audioPlayer.load(); 
