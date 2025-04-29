@@ -387,6 +387,20 @@ document.title = `${sData[firstTrackNum].name} - ${sData[firstTrackNum].game}`
 
 playlist();
 
+function nextTrack(){
+    var nextSong = '';
+    var nextTrackNum = get_rand(nums);
+    nextSong = 'tracks/' + nextTrackNum + '.mp3';
+    trackInfo.innerHTML = `${sData[nextTrackNum].name} - ${sData[nextTrackNum].game}`
+    console.log(nextSong)
+    audioPlayer.src = nextSong;
+    audioPlayer.load(); 
+    audioPlayer.play();
+    document.title = `${sData[nextTrackNum].name} - ${sData[nextTrackNum].game}`
+}
+
+document.getElementById('trackInfo').addEventListener('click', nextTrack)
+
 const params = new URLSearchParams(window.location.search);
 const channel = params.get('channel') || 'lowpolyskeleton';
 const client = new tmi.Client({
@@ -404,15 +418,7 @@ client.connect().then(() => {
 client.on('message', (wat, tags, message, self) => {
 
     if(message.startsWith("!skip") && tags.username == "lowpolyskeleton"){
-        var nextSong = '';
-        var nextTrackNum = get_rand(nums);
-        nextSong = 'tracks/' + nextTrackNum + '.mp3';
-        trackInfo.innerHTML = `${sData[nextTrackNum].name} - ${sData[nextTrackNum].game}`
-        console.log(nextSong)
-        audioPlayer.src = nextSong;
-        audioPlayer.load(); 
-        audioPlayer.play();
-        document.title = `${sData[nextTrackNum].name} - ${sData[nextTrackNum].game}`
+        nextTrack();
     }
 
 });

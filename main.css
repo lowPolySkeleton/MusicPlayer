@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Micro+5&display=swap');
+*{
+  box-sizing: border-box;
+}
 body, html{
     width: 100%;
     height: 100%;
@@ -14,6 +17,21 @@ body, html{
     max-width: 1200px;
     background: linear-gradient(90deg, #feffbe 0%, #ffcfea 33%, #bfb9ff 66%, #afe9ff 100%);
     clip-path: polygon(30% 0%, 70% 0%, 100% 11%, 100% 70%, 94% 100%, 28% 100%, 3% 88%, 0 9%);
+  }
+  @media screen and (width <= 600px) {
+    body, html{
+      padding: 0 0 0 0px;
+    }
+    .audio__player {
+      margin-top: 0px;
+      max-width: 100%;
+      height: 100%;
+      clip-path: none;
+      padding-top: 50%;
+    }
+    .polygon{
+      display: none;
+    }
   }
   .polygon{
     z-index: 1;
