@@ -302,25 +302,36 @@ var sData = {
     76:{
         "name": "Monoco",
         "game": "Clair Obscur: Expedition 33"
+    },
+    77:{
+        "name": "Staff Roll",
+        "game": "Super Mario 64"
+    },
+    78:{
+        "name": "Cabin",
+        "game": "Friday The 13th"
     }
 }
 
-var nums = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76];
-var gen_nums = [];
+var nums = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78];
 
-function in_array(array, el) {
-   for(var i = 0 ; i < array.length; i++) 
-       if(array[i] == el) return true;
-   return false;
+function get_rand() {
+    if (nums.length > 0){
+        var rIndex = Math.floor(Math.random()*nums.length)
+        return rIndex
+    }else{
+        location.reload()
+    }
 }
 
-function get_rand(array) {
-    var rand = array[Math.floor(Math.random()*array.length)];
-    if(!in_array(gen_nums, rand)) {
-       gen_nums.push(rand); 
-       return rand;
+function sliceRand(rand){
+
+    if (rand > -1) { // only splice array when item is found
+        nums.splice(rand, 1);
+        console.log(nums)
+    }else{ // reload if item isn't found
+        location.reload()
     }
-    return get_rand(array);
 }
 
 function $(id) { return document.getElementById(id); };
@@ -348,21 +359,35 @@ function calculateCurrentValue(currentTime) {
 	return currentTimeFormatted;
 }
 
+function getDuration(event) {
+  event.target.currentTime = 0
+  event.target.removeEventListener('timeupdate', getDuration)
+  console.log(event.target.duration)
+}
+
 function initProgressBar() {
-	const currentTime = calculateCurrentValue(audioPlayer.currentTime),
-		  totalTime = calculateCurrentValue(audioPlayer.duration);
-	$$(uicurrentTime).innerHTML = currentTime;
-	$$(uiaudioTimeline).addEventListener('click', seek);
-	$$(uitotalTime).innerHTML = totalTime;       
-	audioPlayer.onended = () => {
-		$$(uipercentage).style.width = 0;
-		$$(uicurrentTime).innerHTML = '00:00';
-	};
-	function seek(e) {
-		const percent = e.offsetX / this.offsetWidth;
-		audioPlayer.currentTime = percent * audioPlayer.duration;
-	}
-	calculatePercentPlayed();
+    audioPlayer.addEventListener('loadedmetadata', () => {
+        if (audioPlayer.duration === Infinity || isNaN(Number(audioPlayer.duration))) {
+            audioPlayer.currentTime = 1e101
+            audioPlayer.addEventListener('timeupdate', getDuration)
+        }
+    })
+
+    const currentTime = calculateCurrentValue(audioPlayer.currentTime);
+    const totalTime = calculateCurrentValue(audioPlayer.duration);
+    $$(uicurrentTime).innerHTML = currentTime;
+    $$(uiaudioTimeline).addEventListener('click', seek);
+    $$(uitotalTime).innerHTML = totalTime;       
+    audioPlayer.onended = () => {
+        $$(uipercentage).style.width = 0;
+        $$(uicurrentTime).innerHTML = '00:00';
+    };
+    function seek(e) {
+        const percent = e.offsetX / this.offsetWidth;
+        audioPlayer.currentTime = percent * audioPlayer.duration;
+    }
+    calculatePercentPlayed();
+	
 }
 
 $(uiaudio).addEventListener('timeupdate', initProgressBar);
@@ -370,37 +395,43 @@ $(uiaudio).addEventListener('timeupdate', initProgressBar);
 function playlist() {
     var nextSong = '';
     audioPlayer.addEventListener('ended', function(){
-        var nextTrackNum = get_rand(nums);
+        var rIndex = get_rand();
+        var nextTrackNum = nums[rIndex];
         nextSong = 'tracks/' + nextTrackNum + '.mp3';
         trackInfo.innerHTML = `${sData[nextTrackNum].name} - ${sData[nextTrackNum].game}`
         console.log(nextSong)
         audioPlayer.src = nextSong;
         audioPlayer.load(); 
         audioPlayer.play();
-        document.title = `${sData[nextTrackNum].name} - ${sData[nextTrackNum].game}`
+        document.title = `${sData[nextTrackNum].name} - ${sData[nextTrackNum].game}`;
+        sliceRand(rIndex)
     });
     
 }
 
-var firstTrackNum = get_rand(nums);
+var rIndexFirst = get_rand();
+var firstTrackNum = nums[rIndexFirst];
 var nextSong = 'tracks/' + firstTrackNum + '.mp3';
 trackInfo.innerHTML = `${sData[firstTrackNum].name} - ${sData[firstTrackNum].game}`
 console.log(nextSong)
 audioPlayer.src = nextSong;
-document.title = `${sData[firstTrackNum].name} - ${sData[firstTrackNum].game}`
+document.title = `${sData[firstTrackNum].name} - ${sData[firstTrackNum].game}`;
+sliceRand(rIndexFirst)
 
 playlist();
 
 function nextTrack(){
+    var rIndex = get_rand()
     var nextSong = '';
-    var nextTrackNum = get_rand(nums);
+    var nextTrackNum = nums[rIndex];
     nextSong = 'tracks/' + nextTrackNum + '.mp3';
     trackInfo.innerHTML = `${sData[nextTrackNum].name} - ${sData[nextTrackNum].game}`
     console.log(nextSong)
     audioPlayer.src = nextSong;
     audioPlayer.load(); 
     audioPlayer.play();
-    document.title = `${sData[nextTrackNum].name} - ${sData[nextTrackNum].game}`
+    document.title = `${sData[nextTrackNum].name} - ${sData[nextTrackNum].game}`;
+    sliceRand(rIndex)
 }
 
 document.getElementById('trackInfo').addEventListener('click', nextTrack)
