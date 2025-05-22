@@ -9,6 +9,7 @@ body, html{
     padding: 0 0 0 20px;
     font-family: 'Micro 5', sans-serif;
     color: #313233;
+    overflow: hidden;
 }
 .audio__player {
     position: relative;
@@ -21,7 +22,7 @@ body, html{
     background-position: center center;
     clip-path: polygon(30% 0%, 70% 0%, 100% 11%, 100% 70%, 94% 100%, 28% 100%, 3% 88%, 0 9%);
   }
-  @media screen and (width <= 600px) {
+  @media screen and (width <= 1300px) {
     body, html{
       padding: 0 0 0 0px;
     }
@@ -33,8 +34,11 @@ body, html{
       padding-top: 50%;
     }
     .polygon{
-      display: none;
+      width: 20%;
+      height: 150%;
+      transform: scale(1.5) rotate(180deg);
     }
+
   }
   .polygon{
     z-index: 1;
