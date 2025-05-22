@@ -1,7 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Micro+5&display=swap');
-:root{
-  --grad: #fff6e3 0%, #ff8abe 33%, #fcadfc 66%, #46eaff 100%
-}
 *{
   box-sizing: border-box;
 }
@@ -18,7 +15,10 @@ body, html{
     margin-top: 20px;
     padding: 20px 60px 40px 60px;
     max-width: 1200px;
-    background: linear-gradient(145deg, var(--grad));
+    background: url('grad.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
     clip-path: polygon(30% 0%, 70% 0%, 100% 11%, 100% 70%, 94% 100%, 28% 100%, 3% 88%, 0 9%);
   }
   @media screen and (width <= 600px) {
@@ -40,7 +40,9 @@ body, html{
     z-index: 1;
     position: absolute;
     opacity: .5;
-    background: linear-gradient(90deg, var(--grad));
+    background: url('grad.png');
+    background-repeat: no-repeat;
+    background-size: cover;
     clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
     width: 20%;
     height: 150%;
@@ -48,12 +50,10 @@ body, html{
   .polygon:nth-child(1) {
     top: -20%;
     left: -10%;
-    background: linear-gradient(20deg, var(--grad));
   }
   .polygon:nth-child(2) {
     top: -40%;
     left: 15%;
-    background: linear-gradient(-70deg, var(--grad));
   }
   .polygon:nth-child(3){
     top: -20%;
@@ -67,7 +67,6 @@ body, html{
     left: 20%;
     width: 80%;
     height: 150%;
-    background: linear-gradient(-90deg, var(--grad));
   }
   .polygon:nth-child(5){
     top: 0%;
@@ -87,7 +86,6 @@ body, html{
     width: 30%;
     height: 150%;
     transform: rotate(20deg);
-    background: linear-gradient(-30deg, var(--grad));
   }
   .polygon:nth-child(8){
     top: -20%;
