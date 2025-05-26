@@ -1,4 +1,5 @@
-var sData = {
+// set variables
+var trackMetadata = {
     1:{
         "name": "Underworld Forest",
         "game": "Last Bible III"
@@ -365,41 +366,110 @@ var sData = {
     },
 }
 
-var nums = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83];
+var trackIDs = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91];
 
-function get_rand() {
-    if (nums.length > 0){
-        var rIndex = Math.floor(Math.random()*nums.length)
-        return rIndex
-    }else{
-        location.reload()
-    }
-}
 
-function sliceRand(rand){
-
-    if (rand > -1) { // only splice array when item is found
-        nums.splice(rand, 1);
-        console.log(nums)
-    }else{ // reload if item isn't found
-        location.reload()
-    }
-}
-
-function $(id) { return document.getElementById(id); };
-function $$(className) { return document.querySelector(className); };
-const trackInfo = document.getElementById('trackInfo');
 const audioPlayer = document.getElementById('audioPlayer');
-const uiaudio = 'audioPlayer';
-const uipercentage = '.audio__timeline-bar-percentage';
-const uiaudioTimeline = '.audio__timeline';
-const uicurrentTime = '.audio__timeline-current';
-const uitotalTime = '.audio__timeline-total';
+const uiTrackInfo = document.getElementById('trackInfo');
+const uiAudioPercentage = document.getElementById('audioPlayer');
+const uiPercentage = document.getElementsByClassName('audioTimelineBarPercentage')[0];
+const uiTimeline = document.getElementsByClassName('audioTimeline')[0];
+const uiCurrentTime = document.getElementsByClassName('audioTimelineCurrent')[0];
+const uiTotalTime = document.getElementsByClassName('audioTimelineTotal')[0];
+let currentTrackIndex = 0;
 
 
+// functions
+function shuffle(array) {
+  let currentIndex = array.length;
+
+  // While there remain elements to shuffle...
+  while (currentIndex != 0) {
+
+    // Pick a remaining element...
+    let randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // And swap it with the current element.
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex], array[currentIndex]];
+  }
+}
+
+
+
+function initRandomPlaylist(){
+    //shuffle the trackIDs
+    shuffle(trackIDs);
+    console.log(trackIDs)
+    const currentTrack = trackIDs[currentTrackIndex];
+    const songName = trackMetadata[currentTrack].name;
+    const songGame = trackMetadata[currentTrack].game;
+    // set first track info
+    uiTrackInfo.innerHTML = `${songName} - ${songGame}`
+    audioPlayer.src = 'tracks/' + currentTrack + '.mp3';
+}
+
+initRandomPlaylist();
+
+// init next track in playlist function
+function initNextTrack(){
+    // check if currentTrack index is equal to the number of tracks
+    if (currentTrackIndex + 1 >= trackIDs.length){
+        // if it is then reset the index to zero to replay the playlist
+        currentTrackIndex = 0;
+    }else{ 
+        // if it's not increase the track index
+        currentTrackIndex = currentTrackIndex + 1;
+    }
+    
+    const currentTrack = trackIDs[currentTrackIndex];
+    const songName = trackMetadata[currentTrack].name;
+    const songGame = trackMetadata[currentTrack].game
+    uiTrackInfo.innerHTML = `${songName} - ${songGame}`
+    audioPlayer.src = 'tracks/' + currentTrack + '.mp3';
+}
+
+// play next track when track ends or when next track is clicked
+audioPlayer.addEventListener('ended', initNextTrack);
+uiTotalTime.addEventListener('click', initNextTrack);
+
+
+// init previous track in playlist function
+function initPreviousTrack(){
+    // check if currentTrack index is greater than 0
+    if (currentTrackIndex > 0){
+        // if it is, we can decrease it by one for the previous track.
+        currentTrackIndex = currentTrackIndex - 1;
+    }
+    const currentTrack = trackIDs[currentTrackIndex];
+    const songName = trackMetadata[currentTrack].name;
+    const songGame = trackMetadata[currentTrack].game
+    uiTrackInfo.innerHTML = `${songName} - ${songGame}`
+    audioPlayer.src = 'tracks/' + currentTrack + '.mp3';
+}
+
+// play previous track when previous track is clicked
+uiCurrentTime.addEventListener('click', initPreviousTrack);
+
+
+//play or pause function
+function playPause(){
+    if (audioPlayer.duration > 0 && !audioPlayer.paused) {
+        audioPlayer.pause();
+    } else {
+        audioPlayer.play();
+    }
+}
+
+//play or pause when track info is clicked
+uiTrackInfo.addEventListener('click', playPause);
+
+
+// track play head functions
 function calculatePercentPlayed() {
-	let percentage = (audioPlayer.currentTime / audioPlayer.duration).toFixed(2) * 100;
-	$$(uipercentage).style.width = `${percentage}%`;
+	let percent = (audioPlayer.currentTime / audioPlayer.duration).toFixed(2) * 100;
+	uiPercentage.style.width = `${percent}%`;
 }
 
 function calculateCurrentValue(currentTime) {
@@ -427,12 +497,12 @@ function initProgressBar() {
 
     const currentTime = calculateCurrentValue(audioPlayer.currentTime);
     const totalTime = calculateCurrentValue(audioPlayer.duration);
-    $$(uicurrentTime).innerHTML = currentTime;
-    $$(uiaudioTimeline).addEventListener('click', seek);
-    $$(uitotalTime).innerHTML = totalTime;       
+    uiCurrentTime.innerHTML = currentTime;
+    uiTimeline.addEventListener('click', seek);
+    uiTotalTime.innerHTML = totalTime;       
     audioPlayer.onended = () => {
-        $$(uipercentage).style.width = 0;
-        $$(uicurrentTime).innerHTML = '00:00';
+        uiPercentage.style.width = 0;
+        uiCurrentTime.innerHTML = '00:00';
     };
     function seek(e) {
         const percent = e.offsetX / this.offsetWidth;
@@ -442,52 +512,18 @@ function initProgressBar() {
 	
 }
 
-$(uiaudio).addEventListener('timeupdate', initProgressBar);
+audioPlayer.addEventListener('timeupdate', initProgressBar);
 
-function playlist() {
-    var nextSong = '';
-    audioPlayer.addEventListener('ended', function(){
-        var rIndex = get_rand();
-        var nextTrackNum = nums[rIndex];
-        nextSong = 'tracks/' + nextTrackNum + '.mp3';
-        trackInfo.innerHTML = `${sData[nextTrackNum].name} - ${sData[nextTrackNum].game}`
-        console.log(nextSong)
-        audioPlayer.src = nextSong;
-        audioPlayer.load(); 
-        audioPlayer.play();
-        document.title = `${sData[nextTrackNum].name} - ${sData[nextTrackNum].game}`;
-        sliceRand(rIndex)
-    });
-    
-}
 
-var rIndexFirst = get_rand();
-var firstTrackNum = nums[rIndexFirst];
-var nextSong = 'tracks/' + firstTrackNum + '.mp3';
-trackInfo.innerHTML = `${sData[firstTrackNum].name} - ${sData[firstTrackNum].game}`
-console.log(nextSong)
-audioPlayer.src = nextSong;
-document.title = `${sData[firstTrackNum].name} - ${sData[firstTrackNum].game}`;
-sliceRand(rIndexFirst)
+//make media buttons work  
+if ('mediaSession' in navigator) {
+    navigator.mediaSession.setActionHandler('previoustrack', initPreviousTrack);
+    navigator.mediaSession.setActionHandler('nexttrack', initNextTrack);
+    navigator.mediaSession.setActionHandler('play', playPause);
+    navigator.mediaSession.setActionHandler('pause', playPause);
+} 
 
-playlist();
-
-function nextTrack(){
-    var rIndex = get_rand()
-    var nextSong = '';
-    var nextTrackNum = nums[rIndex];
-    nextSong = 'tracks/' + nextTrackNum + '.mp3';
-    trackInfo.innerHTML = `${sData[nextTrackNum].name} - ${sData[nextTrackNum].game}`
-    console.log(nextSong)
-    audioPlayer.src = nextSong;
-    audioPlayer.load(); 
-    audioPlayer.play();
-    document.title = `${sData[nextTrackNum].name} - ${sData[nextTrackNum].game}`;
-    sliceRand(rIndex)
-}
-
-document.getElementById('trackInfo').addEventListener('click', nextTrack)
-
+// chat functions
 const params = new URLSearchParams(window.location.search);
 const channel = params.get('channel') || 'lowpolyskeleton';
 const client = new tmi.Client({
@@ -505,7 +541,11 @@ client.connect().then(() => {
 client.on('message', (wat, tags, message, self) => {
 
     if(message.startsWith("!skip") && tags.username == "lowpolyskeleton"){
-        nextTrack();
+        initNextTrack();
+    }
+
+    if(message.startsWith("!back") && tags.username == "lowpolyskeleton"){
+        initPreviousTrack();
     }
 
 });

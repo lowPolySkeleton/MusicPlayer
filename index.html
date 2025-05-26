@@ -9,7 +9,7 @@
 </head>
 <body>
     
-    <div class="audio__player" role="audio" id="player">
+    <div class="audioPlayerWrapper" role="audio" id="player">
         <div class="polygon"></div>
         <div class="polygon"></div>
         <div class="polygon"></div>
@@ -20,22 +20,20 @@
         <div class="polygon"></div>
         <audio autoplay id="audioPlayer" preload="metadata"></audio>
         <div id="trackInfo"></div>
-        <div class="audio__controls">
-          <div class="audio__timeline">
-            <div class="audio__timeline-bar">
-              <div class="audio__timeline-bar-percentage"></div>
+        <div class="audioControls">
+          <div class="audioTimeline">
+            <div class="audioTimelineBar">
+              <div class="audioTimelineBarPercentage"></div>
             </div>
           </div>
         </div>
-        <span class="audio__timeline-current" id="currentTime">00:00</span>
-        <span class="audio__timeline-total">00:00</span>
-        <div id="visualizer_wrapper">
-        </div>
+        <span class="audioTimelineCurrent" id="currentTime">00:00</span>
+        <span class="audioTimelineTotal">00:00</span>
     </div>
   
   
     <script src="tmi.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
     <script src="main.js"></script>
 </body>
 </html>
