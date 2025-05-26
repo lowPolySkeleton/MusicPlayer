@@ -405,9 +405,10 @@ function initRandomPlaylist(){
     const currentTrack = trackIDs[currentTrackIndex];
     const songName = trackMetadata[currentTrack].name;
     const songGame = trackMetadata[currentTrack].game;
+    audioPlayer.src = 'tracks/' + currentTrack + '.mp3';
     // set first track info
     uiTrackInfo.innerHTML = `${songName} - ${songGame}`
-    audioPlayer.src = 'tracks/' + currentTrack + '.mp3';
+    document.title = `${songName} - ${songGame}`
 }
 
 initRandomPlaylist();
@@ -425,9 +426,11 @@ function initNextTrack(){
     
     const currentTrack = trackIDs[currentTrackIndex];
     const songName = trackMetadata[currentTrack].name;
-    const songGame = trackMetadata[currentTrack].game
-    uiTrackInfo.innerHTML = `${songName} - ${songGame}`
+    const songGame = trackMetadata[currentTrack].game;
     audioPlayer.src = 'tracks/' + currentTrack + '.mp3';
+
+    uiTrackInfo.innerHTML = `${songName} - ${songGame}`
+    document.title = `${songName} - ${songGame}`
 }
 
 // play next track when track ends or when next track is clicked
@@ -523,6 +526,7 @@ if ('mediaSession' in navigator) {
     navigator.mediaSession.setActionHandler('pause', playPause);
 } 
 
+
 // chat functions
 const params = new URLSearchParams(window.location.search);
 const channel = params.get('channel') || 'lowpolyskeleton';
@@ -546,6 +550,10 @@ client.on('message', (wat, tags, message, self) => {
 
     if(message.startsWith("!back") && tags.username == "lowpolyskeleton"){
         initPreviousTrack();
+    }
+
+    if((message.startsWith("!play") || message.startsWith("!pause"))&& tags.username == "lowpolyskeleton"){
+        playPause();
     }
 
 });
