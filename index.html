@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="main.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <title>music</title>
 </head>
 <body>
@@ -19,16 +20,20 @@
         <div class="polygon"></div>
         <div class="polygon"></div>
         <audio autoplay id="audioPlayer" preload="metadata"></audio>
-        <div id="trackInfo"></div>
-        <div class="audioControls">
-          <div class="audioTimeline">
-            <div class="audioTimelineBar">
-              <div class="audioTimelineBarPercentage"></div>
+        <div class="uiPlayerWrapper">
+          <div>
+            <div id="trackInfo"></div>
+            <div class="audioControls">
+              <div class="audioTimeline">
+                <div class="audioTimelineBar">
+                  <div class="audioTimelineBarPercentage"></div>
+                </div>
+              </div>
             </div>
+            <span class="audioTimelineCurrent" id="currentTime">00:00</span>
+            <span class="audioTimelineTotal">00:00</span>
           </div>
         </div>
-        <span class="audioTimelineCurrent" id="currentTime">00:00</span>
-        <span class="audioTimelineTotal">00:00</span>
     </div>
   
   

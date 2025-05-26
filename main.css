@@ -22,6 +22,17 @@ body, html{
     background-position: center center;
     clip-path: polygon(30% 0%, 70% 0%, 100% 11%, 100% 70%, 94% 100%, 28% 100%, 3% 88%, 0 9%);
   }
+  .uiPlayerWrapper{
+    height: 100%;
+    width: 100%;
+    clear:both;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .uiPlayerWrapper > div{
+    width: 100%;
+  }
   @media screen and (width <= 1300px) {
     body, html{
       padding: 0 0 0 0px;
@@ -31,7 +42,6 @@ body, html{
       max-width: 100%;
       height: 100%;
       clip-path: none;
-      padding-top: 50%;
     }
     .polygon{
       width: 20%;
