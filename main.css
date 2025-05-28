@@ -6,20 +6,25 @@ body, html{
     width: 100%;
     height: 100%;
     margin: 0;
-    padding: 0 0 0 20px;
+    padding: 0 0 0 0px;
     font-family: 'Micro 5', sans-serif;
     color: #313233;
     overflow: hidden;
 }
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .audioPlayerWrapper {
     position: relative;
-    margin-top: 20px;
-    padding: 20px 60px 40px 60px;
-    max-width: 1200px;
+    padding: 20px 30px 20px 60px;
+    min-width: 1200px;
     background: url('grad.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
+    overflow: hidden;
     clip-path: polygon(30% 0%, 70% 0%, 100% 11%, 100% 70%, 94% 100%, 28% 100%, 3% 88%, 0 9%);
   }
   .uiPlayerWrapper{
@@ -28,27 +33,20 @@ body, html{
     clear:both;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
   }
-  .uiPlayerWrapper > div{
-    width: 100%;
-  }
-  @media screen and (width <= 1300px) {
-    body, html{
-      padding: 0 0 0 0px;
-    }
+  @media (width < 1300px) {
     .audioPlayerWrapper {
-      margin-top: 0px;
-      max-width: 100%;
+      width: 100%;
       height: 100%;
       clip-path: none;
     }
-    .polygon{
-      width: 20%;
-      height: 150%;
-      transform: scale(1.5) rotate(180deg);
-    }
-
+    .uiPlayerWrapper{
+    align-items: center;
+  }
+  }
+  .uiPlayerWrapper > div{
+    width: 100%;
   }
   .polygon{
     z-index: 1;
@@ -141,6 +139,9 @@ body, html{
   }
   #trackInfo{
     position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
     font-size: 45px;
     line-height: 80%;
     z-index: 2;
