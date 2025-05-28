@@ -499,7 +499,7 @@ function initRandomPlaylist(){
     const songComp = trackMetadata[currentTrack].comp;
     audioPlayer.src = 'tracks/' + currentTrack + '.mp3';
     // set first track info
-    uiTrackInfo.innerHTML = `<b>Song:</b>\u00A0${songName}\u00A0\u00A0\u00A0\u00A0<b>Game:</b>\u00A0${songGame}`
+    uiTrackInfo.innerHTML = `<div><b>Song:</b>\u00A0${songName}</div><div><b>Game:</b>\u00A0${songGame}</div>`
     document.title = `${songName} - ${songGame}`
 }
 
@@ -522,7 +522,7 @@ function initNextTrack(){
     const songComp = trackMetadata[currentTrack].comp;
     audioPlayer.src = 'tracks/' + currentTrack + '.mp3';
 
-    uiTrackInfo.innerHTML = `<b>Song:</b>\u00A0${songName}\u00A0\u00A0\u00A0\u00A0<b>Game:</b>\u00A0${songGame}`
+    uiTrackInfo.innerHTML = `<div><b>Song:</b>\u00A0${songName}</div><div><b>Game:</b>\u00A0${songGame}</div>`
     document.title = `${songName} - ${songGame}`
 }
 
@@ -542,7 +542,7 @@ function initPreviousTrack(){
     const songName = trackMetadata[currentTrack].name;
     const songGame = trackMetadata[currentTrack].game;
     const songComp = trackMetadata[currentTrack].comp;
-    uiTrackInfo.innerHTML = `<b>Song:</b>\u00A0${songName}\u00A0\u00A0\u00A0\u00A0<b>Game:</b>\u00A0${songGame}`
+    uiTrackInfo.innerHTML = `<div><b>Song:</b>\u00A0${songName}</div><div><b>Game:</b>\u00A0${songGame}</div>`
     audioPlayer.src = 'tracks/' + currentTrack + '.mp3';
 }
 

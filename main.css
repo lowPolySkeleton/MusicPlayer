@@ -19,7 +19,7 @@ body{
 .audioPlayerWrapper {
     position: relative;
     padding: 20px 30px 20px 60px;
-    min-width: 1200px;
+    width: 1200px;
     background: url('grad.png');
     background-repeat: no-repeat;
     background-size: cover;
@@ -35,6 +35,17 @@ body{
     justify-content: center;
     align-items: flex-end;
   }
+  #trackInfo{
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
+    gap: 40px;
+    font-size: 45px;
+    line-height: 80%;
+    z-index: 2;
+  }
   @media (width < 1300px) {
     .audioPlayerWrapper {
       width: 100%;
@@ -43,7 +54,11 @@ body{
     }
     .uiPlayerWrapper{
     align-items: center;
-  }
+    }
+    #trackInfo{
+    flex-direction: column;
+    gap: 5px;
+    }
   }
   .uiPlayerWrapper > div{
     width: 100%;
@@ -137,15 +152,7 @@ body{
   .audioTimelineCurrent, .audioTimelineTotal {
     font-size: 28px;
   }
-  #trackInfo{
-    position: relative;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    font-size: 45px;
-    line-height: 80%;
-    z-index: 2;
-  }
+  
   .audioTimelineCurrent {
     float: left;
     position: relative;
