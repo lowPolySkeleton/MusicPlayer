@@ -32,6 +32,7 @@ body{
     width: 100%;
     clear:both;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: flex-end;
   }
@@ -46,20 +47,7 @@ body{
     line-height: 80%;
     z-index: 2;
   }
-  @media (width < 1300px) {
-    .audioPlayerWrapper {
-      width: 100%;
-      height: 100%;
-      clip-path: none;
-    }
-    .uiPlayerWrapper{
-    align-items: center;
-    }
-    #trackInfo{
-    flex-direction: column;
-    gap: 5px;
-    }
-  }
+  
   .uiPlayerWrapper > div{
     width: 100%;
   }
@@ -162,4 +150,68 @@ body{
     float: right;
     position: relative;
     z-index: 2;
+  }
+
+  @media (width < 1300px) {
+    .audioPlayerWrapper {
+      width: 100%;
+      height: 100%;
+      clip-path: none;
+    }
+    .uiPlayerWrapper{
+    align-items: center;
+    }
+    #trackInfo{
+    flex-direction: column;
+    gap: 5px;
+    }
+  }
+
+  @media (height < 100px) {
+    .audioPlayerWrapper {
+      width: 100%;
+      height: 100%;
+      clip-path: none;
+      padding: 8px 20px 8px 20px;
+      
+    }
+    .uiPlayerWrapper{
+      align-items: flex-start;
+      justify-content: flex-start;
+      flex-direction: row;
+      gap: 60px;
+    }
+    .uiPlayerWrapper > div{
+      width: auto;
+    }
+    #trackInfo{
+      width: 100%;
+      flex-direction: row;
+      padding-top: 3px;
+      gap: 60px;
+      line-height: 60%;
+      flex: 1 1 auto
+    }
+    #trackInfo > div{
+      white-space: nowrap;
+    }
+    #trackPlayhead{
+      width: 200%;
+      display: flex;
+      justify-content: flex-start;
+      gap: 10px;
+      align-items: flex-start;
+      flex-direction: row;
+      flex: 1 1 auto
+    }
+    .audioTimelineCurrent{
+      order: 1
+    }
+    .audioControls{
+      width: 100%;
+      order: 2
+    }
+    .audioTimelineTotal{
+      order: 3
+    }
   }
