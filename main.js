@@ -475,6 +475,11 @@ var trackMetadata = {
         "game": "Super Hang-On",
         "comp": "?"
     },
+    96:{
+        "name": "Opening Theme",
+        "game": "Traysia",
+        "comp": "?"
+    },
 }
 
 // create array from tracks
