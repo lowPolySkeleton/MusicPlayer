@@ -18,7 +18,7 @@ body{
 }
 .audioPlayerWrapper {
     position: relative;
-    padding: 20px 30px 20px 60px;
+    padding: 20px 50px 20px 50px;
     width: 100%;
     height: 100%;
     background: #313233;
@@ -90,7 +90,7 @@ body{
     content: '';
     position: absolute;
     right: -20px;
-    top: -22px;
+    top: -21px;
     width: 40px;
     height: 40px;
     background-repeat: no-repeat;
