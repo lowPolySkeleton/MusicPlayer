@@ -480,6 +480,11 @@ var trackMetadata = {
         "game": "Traysia",
         "comp": "?"
     },
+    97:{
+        "name": "A Memory That Cannot Be Pursued",
+        "game": "Soma Bringer",
+        "comp": "Yasunori Mitsuda"
+    },
 }
 
 // create array from tracks
