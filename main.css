@@ -15,13 +15,14 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: rgba(0, 0, 0, 1);
 }
 .audioPlayerWrapper {
     position: relative;
     padding: 20px 50px 20px 50px;
     width: 100%;
     height: 100%;
-    background: #111;
+    background: rgb(0, 0, 0, .8);
     /* background: url('grad.png');
     background-repeat: no-repeat;
     background-size: cover;
@@ -156,7 +157,6 @@ body{
       height: 100%;
       clip-path: none;
       padding: 10px 20px 8px 20px;
-      background: rgb(0, 0, 0, .8);
     }
     .uiPlayerWrapper{
       align-items: flex-start;
