@@ -411,7 +411,7 @@ var trackMetadata = {
         "comp": "?"
     },
     83:{
-        "name": "Ocean",
+        "name": "Tidal Surge",
         "game": "Vectorman",
         "comp": "?"
     },
