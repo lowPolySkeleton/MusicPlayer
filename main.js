@@ -485,6 +485,11 @@ var trackMetadata = {
         "game": "Soma Bringer",
         "comp": "Yasunori Mitsuda"
     },
+    98:{
+        "name": "Dearly Beloved II",
+        "game": "Kingdom Hearts 2",
+        "comp": ""
+    },
 }
 
 // create array from tracks
