@@ -66,9 +66,9 @@ var trackMetadata = {
         "comp": "Aleksandr Goreslavets"
     },
     14:{
-        "name": "Third District",
-        "game": "Katana Zero",
-        "comp": "Thijs Lodewijk, Bill Kiley"
+        "name": "Credits",
+        "game": "Kirby's Dream Land 3",
+        "comp": ""
     },
     15:{
         "name": "Hit the Floor",
@@ -126,7 +126,7 @@ var trackMetadata = {
         "comp": "Yoshino Aoki"
     },
     26:{
-        "name": "Yet the Merchants Will Go",
+        "name": "Opening Animation",
         "game": "Breath of Fire IV",
         "comp": "Yoshino Aoki"
     },
@@ -271,8 +271,8 @@ var trackMetadata = {
         "comp": "?"
     },
     55:{
-        "name": "Narita One",
-        "game": "Narita Boy",
+        "name": "Beware the Forest's Mushrooms",
+        "game": "Super Mario RPG",
         "comp": "?"
     },
     56:{
@@ -291,8 +291,8 @@ var trackMetadata = {
         "comp": "?"
     },
     59:{
-        "name": "Main Theme",
-        "game": "Pepper Grinder",
+        "name": "Radical Dreamers",
+        "game": "Chrono Cross",
         "comp": "?"
     },
     60:{
@@ -321,8 +321,8 @@ var trackMetadata = {
         "comp": "?"
     },
     65:{
-        "name": "Divide",
-        "game": "Hotline Miami 2: Wrong Number",
+        "name": "Toxic Caves",
+        "game": "Sonic the Hedgehog Spinball",
         "comp": "?"
     },
     66:{
@@ -503,6 +503,7 @@ const uiTimeline = document.getElementsByClassName('audioTimeline')[0];
 const uiCurrentTime = document.getElementsByClassName('audioTimelineCurrent')[0];
 const uiTotalTime = document.getElementsByClassName('audioTimelineTotal')[0];
 let currentTrackIndex = 0;
+
 
 
 // functions
