@@ -99,11 +99,16 @@ body{
     background: #efefef;
   }
   .audioTimelineBar::after{
-    content: '🪦';
-    font-size: 30px;
+    content: '';
     position: absolute;
-    right: -28px;
-    bottom: -15px;
+    width: 30px;
+    height: 30px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 30px 30px;
+    background-image: url('tomb.png');
+    right: -25px;
+    bottom: -10px;
     color: #efefef;
   }
    
