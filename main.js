@@ -111,9 +111,9 @@ var trackMetadata = {
         "comp": "Hitoshi Sakimoto"
     },
     23:{
-        "name": "Oil Ocean Zone",
-        "game": "Sonic the Hedgehog 2",
-        "comp": "Masato Nakamura"
+        "name": "Main Theme",
+        "game": "Space Harrier",
+        "comp": ""
     },
     24:{
         "name": "Chemical Plant Zone",
@@ -301,8 +301,8 @@ var trackMetadata = {
         "comp": "?"
     },
     61:{
-        "name": "Home Theme",
-        "game": "World of Horror",
+        "name": "Level 1-2",
+        "game": "Star Mazer DSP",
         "comp": "?"
     },
     62:{
@@ -421,8 +421,8 @@ var trackMetadata = {
         "comp": "?"
     },
     85:{
-        "name": "Menu",
-        "game": "Kirby Air Ride",
+        "name": "Steam Gardens",
+        "game": "Super Mario Odyssey",
         "comp": "?"
     },
     86:{
@@ -441,8 +441,8 @@ var trackMetadata = {
         "comp": "?"
     },
     89:{
-        "name": "Rave Dance Tune",
-        "game": "Cool Spot",
+        "name": "Level 3",
+        "game": "Star Mazer DSP",
         "comp": "?"
     },
     90:{
