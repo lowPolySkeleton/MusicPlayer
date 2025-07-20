@@ -236,8 +236,8 @@ var trackMetadata = {
         "comp": "?"
     },
     48:{
-        "name": "Kieran and Terapagos Battle Music",
-        "game": "Pokemon Scarlet & Violet: Indigo Disk",
+        "name": "Possessed Trainer Battle",
+        "game": "Pokemon Scarlet & Violet",
         "comp": "?"
     },
     49:{
@@ -316,8 +316,8 @@ var trackMetadata = {
         "comp": "?"
     },
     64:{
-        "name": "Main Theme",
-        "game": "Fantasian Neo Dimension",
+        "name": "Sky Tower",
+        "game": "Kirby's Return to Dreamland",
         "comp": "?"
     },
     65:{
