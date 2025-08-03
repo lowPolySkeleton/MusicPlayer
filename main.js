@@ -191,9 +191,9 @@ var trackMetadata = {
         "comp": "Yasunori Mitsuda"
     },
     39:{
-        "name": "File Select",
-        "game": "Super Mario 64",
-        "comp": "Koji Kondo"
+        "name": "High Score",
+        "game": "Gods (Genesis)",
+        "comp": ""
     },
     40:{
         "name": "Dire Dire Docks",
