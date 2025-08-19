@@ -542,9 +542,17 @@ function initRandomPlaylist(){
     const songGame = trackMetadata[currentTrack].game;
     const songComp = trackMetadata[currentTrack].comp;
     audioPlayer.src = 'tracks/' + currentTrack + '.mp3';
-    // set first track info
+    // set first track info and tracklist
     uiTrackInfo.innerHTML = `<div><b>Song:</b>\u00A0${songName}</div><div><b>Game:</b>\u00A0${songGame}</div>`
     document.title = `${songName} - ${songGame}`
+
+    for (let i = 1; i < trackIDs.length; i++) {
+        const trackIndex = trackIDs[i];
+        const listSongName = trackMetadata[trackIndex].name;
+        const listSongGame = trackMetadata[trackIndex].game;
+        document.getElementById('tracklist').innerHTML += `<div class="tracklistItem" data-dex="${i}"><div><b>Song:</b>\u00A0${listSongName}</div><div><b>Game:</b>\u00A0${listSongGame}</div></div>`
+        
+    }
 }
 
 initRandomPlaylist();
@@ -568,6 +576,8 @@ function initNextTrack(){
 
     uiTrackInfo.innerHTML = `<div><b>Song:</b>\u00A0${songName}</div><div><b>Game:</b>\u00A0${songGame}</div>`
     document.title = `${songName} - ${songGame}`
+
+    document.getElementById('tracklist').removeChild(document.getElementById('tracklist').getElementsByClassName('tracklistItem')[0])
 }
 
 // play next track when track ends or when next track is clicked
@@ -576,7 +586,9 @@ uiTotalTime.addEventListener('click', initNextTrack);
 
 
 // init previous track in playlist function
-function initPreviousTrack(){
+function initPreviousTrack(){ 
+    let currentTrackIndexActual = currentTrackIndex;
+
     // check if currentTrack index is greater than 0
     if (currentTrackIndex > 0){
         // if it is, we can decrease it by one for the previous track.
@@ -588,11 +600,59 @@ function initPreviousTrack(){
     const songComp = trackMetadata[currentTrack].comp;
     uiTrackInfo.innerHTML = `<div><b>Song:</b>\u00A0${songName}</div><div><b>Game:</b>\u00A0${songGame}</div>`
     audioPlayer.src = 'tracks/' + currentTrack + '.mp3';
+
+    const currentTrackActual = trackIDs[currentTrackIndexActual];
+    const listSongName = trackMetadata[currentTrackActual].name;
+    const listSongGame = trackMetadata[currentTrackActual].game;
+
+    let tracklistItem = document.createElement("div");
+    tracklistItem.classList.add('tracklistItem');
+    tracklistItem.dataset.dex = currentTrackIndexActual;
+    tracklistItem.innerHTML = `<div><b>Song:</b>\u00A0${listSongName}</div><div><b>Game:</b>\u00A0${listSongGame}</div>`
+
+    if (currentTrackIndexActual > 0){
+        document.getElementById('tracklist').prepend(tracklistItem)
+    }
+    
 }
 
 // play previous track when previous track is clicked
 uiCurrentTime.addEventListener('click', initPreviousTrack);
 
+
+// play selected track from tracklist
+function initTracklistTrack(dex){
+    const currentTrack = trackIDs[dex];
+    const songName = trackMetadata[currentTrack].name;
+    const songGame = trackMetadata[currentTrack].game;
+
+    uiTrackInfo.innerHTML = `<div><b>Song:</b>\u00A0${songName}</div><div><b>Game:</b>\u00A0${songGame}</div>`
+    audioPlayer.src = 'tracks/' + currentTrack + '.mp3';
+
+    let tracklistItems = document.getElementById('tracklist').getElementsByClassName('tracklistItem');
+
+    for (let i = 0; i < tracklistItems.length; i++) {
+        const tracklistItem = tracklistItems[i];
+        
+        if (Number(tracklistItem.dataset.dex) <= Number(dex)){
+            tracklistItem.classList.add('deleteMe');
+        }
+    }
+
+    let deleteUs = document.getElementById('tracklist').getElementsByClassName('deleteMe');
+    for (let i = 0; i < deleteUs.length; i++) {
+        const deleteMe = deleteUs[i];
+        deleteMe.remove();
+    }
+}
+
+// bind click events to tracklistItems 
+document.addEventListener("click", function(e){
+  if(e.target.classList.contains("tracklistItem")){
+    let targetDex = e.target.dataset.dex
+    initTracklistTrack(targetDex);
+  }
+});
 
 //play or pause function
 function playPause(){

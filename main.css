@@ -30,7 +30,6 @@ body{
     overflow: hidden;
   }
   .uiPlayerWrapper{
-    height: 100%;
     width: 100%;
     clear:both;
     display: flex;
@@ -51,6 +50,31 @@ body{
   }
   #trackPlayhead{
     margin-top: 20px;
+  }
+  #tracklist{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 20px;
+    margin-top: 40px;
+    font-size: 35px;
+    line-height: 80%;
+    height: 70%;
+    overflow: auto;
+  }
+  .tracklistItem{
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    width: 100%;
+    padding: 10px 0px;
+    cursor: pointer;
+  }
+  .tracklistItem *{
+    pointer-events: none;
+  }
+  .deleteMe{
+    display: none;
   }
   .uiPlayerWrapper > div{
     width: 100%;
@@ -164,10 +188,14 @@ body{
       padding: 10px 20px 8px 20px;
     }
     .uiPlayerWrapper{
+      height: 100%;
       align-items: flex-start;
       justify-content: flex-start;
       flex-direction: row;
       gap: 60px;
+    }
+    #tracklist{
+      display: none;
     }
     .uiPlayerWrapper > div{
       width: auto;
