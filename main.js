@@ -634,6 +634,8 @@ function initTracklistTrack(dex){
     uiTrackInfo.innerHTML = `<div><b>Song:</b>\u00A0${songName}</div><div><b>Game:</b>\u00A0${songGame}</div>`
     audioPlayer.src = 'tracks/' + currentTrack + '.mp3';
 
+    document.title = `${songName} - ${songGame}`
+
     let tracklistItems = document.getElementById('tracklist').getElementsByClassName('tracklistItem');
 
     for (let i = 0; i < tracklistItems.length; i++) {
