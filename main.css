@@ -64,8 +64,8 @@ body{
   }
   .tracklistItem{
     display: flex;
-    flex-direction: row;
-    gap: 40px;
+    flex-direction: column;
+    gap: 2px;
     width: 100%;
     padding: 10px 0px;
     cursor: pointer;

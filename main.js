@@ -296,8 +296,8 @@ var trackMetadata = {
         "comp": "?"
     },
     60:{
-        "name": "Solace Tomorrow",
-        "game": "EX-Zodiac",
+        "name": "Intro Theme",
+        "game": "Mega Man 3",
         "comp": "?"
     },
     61:{
@@ -306,8 +306,8 @@ var trackMetadata = {
         "comp": "?"
     },
     62:{
-        "name": "Calling",
-        "game": "The World Ends With You",
+        "name": "A Ghost's Pumpkin Soup (Pumpkin Hill)",
+        "game": "Sonic Adventure 2",
         "comp": "?"
     },
     63:{
@@ -540,7 +540,6 @@ function initRandomPlaylist(){
     const currentTrack = trackIDs[currentTrackIndex];
     const songName = trackMetadata[currentTrack].name;
     const songGame = trackMetadata[currentTrack].game;
-    const songComp = trackMetadata[currentTrack].comp;
     audioPlayer.src = 'tracks/' + currentTrack + '.mp3';
     // set first track info and tracklist
     uiTrackInfo.innerHTML = `<div><b>Song:</b>\u00A0${songName}</div><div><b>Game:</b>\u00A0${songGame}</div>`
@@ -559,25 +558,27 @@ initRandomPlaylist();
 
 // init next track in playlist function
 function initNextTrack(){
+    
     // check if currentTrack index is equal to the number of tracks
     if (currentTrackIndex + 1 >= trackIDs.length){
         // if it is then reset the index to zero to replay the playlist
-        currentTrackIndex = 0;
+        window.location.reload();
     }else{ 
         // if it's not increase the track index
         currentTrackIndex = currentTrackIndex + 1;
     }
+
+    console.log(currentTrackIndex)
     
     const currentTrack = trackIDs[currentTrackIndex];
     const songName = trackMetadata[currentTrack].name;
     const songGame = trackMetadata[currentTrack].game;
-    const songComp = trackMetadata[currentTrack].comp;
     audioPlayer.src = 'tracks/' + currentTrack + '.mp3';
 
     uiTrackInfo.innerHTML = `<div><b>Song:</b>\u00A0${songName}</div><div><b>Game:</b>\u00A0${songGame}</div>`
     document.title = `${songName} - ${songGame}`
 
-    document.getElementById('tracklist').removeChild(document.getElementById('tracklist').getElementsByClassName('tracklistItem')[0])
+    document.getElementById('tracklist').removeChild(document.getElementById('tracklist').querySelectorAll('.tracklistItem:not(.deleteMe)')[0])
 }
 
 // play next track when track ends or when next track is clicked
@@ -597,7 +598,6 @@ function initPreviousTrack(){
     const currentTrack = trackIDs[currentTrackIndex];
     const songName = trackMetadata[currentTrack].name;
     const songGame = trackMetadata[currentTrack].game;
-    const songComp = trackMetadata[currentTrack].comp;
     uiTrackInfo.innerHTML = `<div><b>Song:</b>\u00A0${songName}</div><div><b>Game:</b>\u00A0${songGame}</div>`
     audioPlayer.src = 'tracks/' + currentTrack + '.mp3';
 
@@ -622,6 +622,11 @@ uiCurrentTime.addEventListener('click', initPreviousTrack);
 
 // play selected track from tracklist
 function initTracklistTrack(dex){
+    dex = Number(dex)
+    currentTrackIndex = dex
+
+    console.log(currentTrackIndex)
+
     const currentTrack = trackIDs[dex];
     const songName = trackMetadata[currentTrack].name;
     const songGame = trackMetadata[currentTrack].game;
