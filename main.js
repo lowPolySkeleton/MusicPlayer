@@ -256,8 +256,8 @@ var trackMetadata = {
         "comp": "?"
     },
     52:{
-        "name": "File Select",
-        "game": "Gravity Circuit",
+        "name": "Cleopactra",
+        "game": "Ms. Pac-Man Maze Madness",
         "comp": "?"
     },
     53:{
@@ -366,8 +366,8 @@ var trackMetadata = {
         "comp": "?"
     },
     74:{
-        "name": "Rain from the Ground",
-        "game": "Clair Obscur: Expedition 33",
+        "name": "Flim Flam",
+        "game": "Tetrisphere",
         "comp": "?"
     },
     75:{
@@ -406,8 +406,8 @@ var trackMetadata = {
         "comp": "?"
     },
     82:{
-        "name": "Rusty Ruins Zone (Act 1)",
-        "game": "Sonic 3D Blast (Saturn)",
+        "name": "Neon Night-Riders",
+        "game": "Teenage Mutant Ninja Turtles IV: Turtles in Time",
         "comp": "?"
     },
     83:{
@@ -426,8 +426,8 @@ var trackMetadata = {
         "comp": "?"
     },
     86:{
-        "name": "(Air Ride) Machine Passage",
-        "game": "Kirby Air Ride",
+        "name": "Xpander",
+        "game": "Wipeout 3",
         "comp": "?"
     },
     87:{
