@@ -729,6 +729,9 @@ if ('mediaSession' in navigator) {
     navigator.mediaSession.setActionHandler('nexttrack', initNextTrack);
     navigator.mediaSession.setActionHandler('play', playPause);
     navigator.mediaSession.setActionHandler('pause', playPause);
+    navigator.mediaSession.metadata = new MediaMetadata({
+    artwork: [{src: "faviconlg.png"}]
+  });
 } 
 
 
