@@ -76,7 +76,7 @@ var trackMetadata = {
         "comp": "Thijs Lodewijk, Bill Kiley"
     },
     16:{
-        "name": "Zangeif Theme",
+        "name": "Zangief Theme",
         "game": "Super Street Fighter 2 Turbo (cps-2)",
         "comp": "Yoko Shimomura"
     },
