@@ -131,9 +131,9 @@ var trackMetadata = {
         "comp": "Yoshino Aoki"
     },
     27:{
-        "name": "Main Theme",
-        "game": "The Legend of Zelda: Tears of the Kingdom",
-        "comp": "Manaka Kataoka"
+        "name": "Twilight Express",
+        "game": "Battle Mania Daiginjou",
+        "comp": "?"
     },
     28:{
         "name": "Kokiri Forest",
@@ -426,8 +426,8 @@ var trackMetadata = {
         "comp": "?"
     },
     86:{
-        "name": "Xpander",
-        "game": "Wipeout 3",
+        "name": "Metal Beat Part 3",
+        "game": "Metal Masters",
         "comp": "?"
     },
     87:{
@@ -486,8 +486,8 @@ var trackMetadata = {
         "comp": "Yasunori Mitsuda"
     },
     98:{
-        "name": "Dearly Beloved II",
-        "game": "Kingdom Hearts 2",
+        "name": "Marlin Fight",
+        "game": "The Blue Marlin",
         "comp": ""
     },
     99:{
