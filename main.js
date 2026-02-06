@@ -16,9 +16,9 @@ var trackMetadata = {
         "comp": "Yasunori Mitsuda"
     },
     4:{
-        "name": "Aquatic Ambience",
-        "game": "Donkey Kong Country",
-        "comp": "David Wise"
+        "name": "Underground Ruins",
+        "game": "Threads of Fate",
+        "comp": "Junya Nakano"
     },
     5:{
         "name": "Stickerbush Symphony",
@@ -236,9 +236,9 @@ var trackMetadata = {
         "comp": "?"
     },
     48:{
-        "name": "Possessed Trainer Battle",
-        "game": "Pokemon Scarlet & Violet",
-        "comp": "?"
+        "name": "Rock Solid",
+        "game": "Conker's Bad Fur Day",
+        "comp": "Robin Beanland"
     },
     49:{
         "name": "Area A",
