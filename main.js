@@ -540,6 +540,7 @@ function initRandomPlaylist(){
     const currentTrack = trackIDs[currentTrackIndex];
     const songName = trackMetadata[currentTrack].name;
     const songGame = trackMetadata[currentTrack].game;
+    const songImg = 'trackImgs/' + songGame + '.jpg';
     audioPlayer.src = 'tracks/' + currentTrack + '.mp3';
     // set first track info and tracklist
     uiTrackInfo.innerHTML = `<div><b>Song:</b>\u00A0${songName}</div><div><b>Game:</b>\u00A0${songGame}</div>`
@@ -548,7 +549,7 @@ function initRandomPlaylist(){
         navigator.mediaSession.metadata = new MediaMetadata({
             title: songName,
             artist: songGame,
-            artwork: [{ src: "faviconlg.png" }],
+            artwork: [{ src: songImg }],
         });
     }
     
@@ -580,7 +581,7 @@ function initNextTrack(){
     const currentTrack = trackIDs[currentTrackIndex];
     const songName = trackMetadata[currentTrack].name;
     const songGame = trackMetadata[currentTrack].game;
-    const songImg = 'trackImgs/' + game + '.jpg';
+    const songImg = 'trackImgs/' + songGame + '.jpg';
     audioPlayer.src = 'tracks/' + currentTrack + '.mp3';
 
     uiTrackInfo.innerHTML = `<div><b>Song:</b>\u00A0${songName}</div><div><b>Game:</b>\u00A0${songGame}</div>`
@@ -645,7 +646,8 @@ function initTracklistTrack(dex){
     const currentTrack = trackIDs[dex];
     const songName = trackMetadata[currentTrack].name;
     const songGame = trackMetadata[currentTrack].game;
-
+    const songImg = 'trackImgs/' + songGame + '.jpg';
+    
     uiTrackInfo.innerHTML = `<div><b>Song:</b>\u00A0${songName}</div><div><b>Game:</b>\u00A0${songGame}</div>`
     audioPlayer.src = 'tracks/' + currentTrack + '.mp3';
 
@@ -654,7 +656,7 @@ function initTracklistTrack(dex){
         navigator.mediaSession.metadata = new MediaMetadata({
             title: songName,
             artist: songGame,
-            artwork: [{ src: "faviconlg.png" }],
+            artwork: [{ src: songImg }],
         });
     }
 
