@@ -67,7 +67,7 @@ var trackMetadata = {
     },
     14:{
         "name": "Credits",
-        "game": "Kirby's Dream Land 3",
+        "game": "Kirbys Dream Land 3",
         "comp": ""
     },
     15:{
@@ -77,12 +77,12 @@ var trackMetadata = {
     },
     16:{
         "name": "Zangief Theme",
-        "game": "Super Street Fighter 2 Turbo (cps-2)",
+        "game": "Super Street Fighter 2 Turbo",
         "comp": "Yoko Shimomura"
     },
     17:{
         "name": "Guile Theme",
-        "game": "Super Street Fighter 2 Turbo (cps-2)",
+        "game": "Super Street Fighter 2 Turbo",
         "comp": "Yoko Shimomura"
     },
     18:{
@@ -614,8 +614,18 @@ function initPreviousTrack(){
     const currentTrack = trackIDs[currentTrackIndex];
     const songName = trackMetadata[currentTrack].name;
     const songGame = trackMetadata[currentTrack].game;
+    const songImg = 'trackImgs/' + songGame + '.jpg';
     uiTrackInfo.innerHTML = `<div><b>Song:</b>\u00A0${songName}</div><div><b>Game:</b>\u00A0${songGame}</div>`
     audioPlayer.src = 'tracks/' + currentTrack + '.mp3';
+
+    document.title = `${songName} - ${songGame}`
+    if ("mediaSession" in navigator) {
+        navigator.mediaSession.metadata = new MediaMetadata({
+            title: songName,
+            artist: songGame,
+            artwork: [{ src: songImg }],
+        });
+    }
 
     const currentTrackActual = trackIDs[currentTrackIndexActual];
     const listSongName = trackMetadata[currentTrackActual].name;
