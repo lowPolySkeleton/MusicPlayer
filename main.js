@@ -580,6 +580,7 @@ function initNextTrack(){
     const currentTrack = trackIDs[currentTrackIndex];
     const songName = trackMetadata[currentTrack].name;
     const songGame = trackMetadata[currentTrack].game;
+    const songImg = 'trackImgs/' + game + '.jpg';
     audioPlayer.src = 'tracks/' + currentTrack + '.mp3';
 
     uiTrackInfo.innerHTML = `<div><b>Song:</b>\u00A0${songName}</div><div><b>Game:</b>\u00A0${songGame}</div>`
@@ -588,7 +589,7 @@ function initNextTrack(){
         navigator.mediaSession.metadata = new MediaMetadata({
             title: songName,
             artist: songGame,
-            artwork: [{ src: "faviconlg.png" }],
+            artwork: [{ src: songImg }],
         });
     }
 
