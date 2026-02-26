@@ -544,13 +544,20 @@ function initRandomPlaylist(){
     // set first track info and tracklist
     uiTrackInfo.innerHTML = `<div><b>Song:</b>\u00A0${songName}</div><div><b>Game:</b>\u00A0${songGame}</div>`
     document.title = `${songName} - ${songGame}`
+    if ("mediaSession" in navigator) {
+        navigator.mediaSession.metadata = new MediaMetadata({
+            title: songName,
+            artist: songGame,
+            artwork: [{ src: "faviconlg.png" }],
+        });
+    }
+    
 
     for (let i = 1; i < trackIDs.length; i++) {
         const trackIndex = trackIDs[i];
         const listSongName = trackMetadata[trackIndex].name;
         const listSongGame = trackMetadata[trackIndex].game;
-        document.getElementById('tracklist').innerHTML += `<div class="tracklistItem" data-dex="${i}"><div><b>Song:</b>\u00A0${listSongName}</div><div><b>Game:</b>\u00A0${listSongGame}</div></div>`
-        
+        document.getElementById('tracklist').innerHTML += `<div class="tracklistItem" data-dex="${i}"><div><b>Song:</b>\u00A0${listSongName}</div><div><b>Game:</b>\u00A0${listSongGame}</div></div>`   
     }
 }
 
@@ -577,6 +584,13 @@ function initNextTrack(){
 
     uiTrackInfo.innerHTML = `<div><b>Song:</b>\u00A0${songName}</div><div><b>Game:</b>\u00A0${songGame}</div>`
     document.title = `${songName} - ${songGame}`
+    if ("mediaSession" in navigator) {
+        navigator.mediaSession.metadata = new MediaMetadata({
+            title: songName,
+            artist: songGame,
+            artwork: [{ src: "faviconlg.png" }],
+        });
+    }
 
     document.getElementById('tracklist').removeChild(document.getElementById('tracklist').querySelectorAll('.tracklistItem:not(.deleteMe)')[0])
 }
@@ -635,6 +649,13 @@ function initTracklistTrack(dex){
     audioPlayer.src = 'tracks/' + currentTrack + '.mp3';
 
     document.title = `${songName} - ${songGame}`
+    if ("mediaSession" in navigator) {
+        navigator.mediaSession.metadata = new MediaMetadata({
+            title: songName,
+            artist: songGame,
+            artwork: [{ src: "faviconlg.png" }],
+        });
+    }
 
     let tracklistItems = document.getElementById('tracklist').getElementsByClassName('tracklistItem');
 
@@ -734,6 +755,11 @@ if ('mediaSession' in navigator) {
   });
 } 
 
+// set volume funciton
+function volumeSet(vol){
+    audioPlayer.volume = vol
+}
+
 
 // chat functions
 const params = new URLSearchParams(window.location.search);
@@ -752,16 +778,21 @@ client.connect().then(() => {
 
 client.on('message', (wat, tags, message, self) => {
 
-    if(message.startsWith("!skip") && tags.username == "lowpolyskeleton"){
+    if(message.startsWith("!skip") && (tags.username == "lowpolyskeleton" || tags.mod == true)){
         initNextTrack();
     }
 
-    if(message.startsWith("!back") && tags.username == "lowpolyskeleton"){
+    if(message.startsWith("!back") && (tags.username == "lowpolyskeleton" || tags.mod == true)){
         initPreviousTrack();
     }
 
-    if((message.startsWith("!play") || message.startsWith("!pause")) && tags.username == "lowpolyskeleton"){
+    if((message.startsWith("!play") || message.startsWith("!pause")) && (tags.username == "lowpolyskeleton" || tags.mod == true)){
         playPause();
     }
 
+    if(message.startsWith("!vol") && (tags.username == "lowpolyskeleton" || tags.mod == true)){
+        let chatVol = message.split("!vol")[1];
+        chatVol = chatVol.trim();
+        volumeSet(chatVol)
+    }
 });
