@@ -137,7 +137,7 @@ var trackMetadata = {
     },
     28:{
         "name": "Kokiri Forest",
-        "game": "The Legend of Zelda: Ocarina of Time",
+        "game": "The Legend of Zelda Ocarina of Time",
         "comp": "Koji Kondo"
     },
     29:{
@@ -192,7 +192,7 @@ var trackMetadata = {
     },
     39:{
         "name": "High Score",
-        "game": "Gods (Genesis)",
+        "game": "Gods",
         "comp": ""
     },
     40:{
@@ -237,7 +237,7 @@ var trackMetadata = {
     },
     48:{
         "name": "Rock Solid",
-        "game": "Conker's Bad Fur Day",
+        "game": "Conkers Bad Fur Day",
         "comp": "Robin Beanland"
     },
     49:{
@@ -257,7 +257,7 @@ var trackMetadata = {
     },
     52:{
         "name": "Cleopactra",
-        "game": "Ms. Pac-Man Maze Madness",
+        "game": "Ms Pac-Man Maze Madness",
         "comp": "?"
     },
     53:{
@@ -277,7 +277,7 @@ var trackMetadata = {
     },
     56:{
         "name": "Investigation ~ Cornered",
-        "game": "Phoenix Wright: Ace Attorney",
+        "game": "Phoenix Wright Ace Attorney",
         "comp": "?"
     },
     57:{
@@ -317,7 +317,7 @@ var trackMetadata = {
     },
     64:{
         "name": "Sky Tower",
-        "game": "Kirby's Return to Dreamland",
+        "game": "Kirbys Return to Dreamland",
         "comp": "?"
     },
     65:{
@@ -327,7 +327,7 @@ var trackMetadata = {
     },
     66:{
         "name": "You Will Know Our Names",
-        "game": "Xenoblade Chronicles: Definitive Edition",
+        "game": "Xenoblade Chronicles",
         "comp": "?"
     },
     67:{
@@ -377,7 +377,7 @@ var trackMetadata = {
     },
     76:{
         "name": "Monoco",
-        "game": "Clair Obscur: Expedition 33",
+        "game": "Clair Obscur Expedition 33",
         "comp": "?"
     },
     77:{
@@ -407,7 +407,7 @@ var trackMetadata = {
     },
     82:{
         "name": "Neon Night-Riders",
-        "game": "Teenage Mutant Ninja Turtles IV: Turtles in Time",
+        "game": "Turtles in Time",
         "comp": "?"
     },
     83:{
@@ -452,7 +452,7 @@ var trackMetadata = {
     },
     91:{
         "name": "The Last Desperate Struggle",
-        "game": "Ghost Trick: Phantom Detective",
+        "game": "Ghost Trick Phantom Detective",
         "comp": "?"
     },
     92:{
@@ -467,7 +467,7 @@ var trackMetadata = {
     },
     94:{
         "name": "Stage 1.1",
-        "game": "Sparkster (Rocket Knight Adventures 2)",
+        "game": "Sparkster",
         "comp": "?"
     },
     95:{
