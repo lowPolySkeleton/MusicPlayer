@@ -1,4 +1,4 @@
-// set variables
+// #region vars
 var trackMetadata = {
     1:{
         "name": "Underworld Forest",
@@ -513,10 +513,10 @@ const uiTimeline = document.getElementsByClassName('audioTimeline')[0];
 const uiCurrentTime = document.getElementsByClassName('audioTimelineCurrent')[0];
 const uiTotalTime = document.getElementsByClassName('audioTimelineTotal')[0];
 let currentTrackIndex = 0;
+// #endregion - vars
 
 
-
-// functions
+// #region -  functions
 function shuffle(array) {
   let currentIndex = array.length;
 
@@ -533,6 +533,21 @@ function shuffle(array) {
   }
 }
 
+function setTrackInfo(track, name, game){
+    const songImg = 'trackImgs/' + game + '.jpg';
+    audioPlayer.src = 'tracks/' + track + '.mp3';
+    uiTrackInfo.innerHTML = `<div><b>Song:</b>\u00A0${name}</div><div><b>Game:</b>\u00A0${game}</div>`
+    document.documentElement.setAttribute("style", `--bgImg: url("${songImg}")`)
+
+    document.title = `${name} - ${game}`
+    if ("mediaSession" in navigator) {
+        navigator.mediaSession.metadata = new MediaMetadata({
+            title: name,
+            artist: game,
+            artwork: [{ src: songImg }],
+        });
+    }
+}
 
 function initRandomPlaylist(){
     //shuffle the trackIDs
@@ -540,19 +555,7 @@ function initRandomPlaylist(){
     const currentTrack = trackIDs[currentTrackIndex];
     const songName = trackMetadata[currentTrack].name;
     const songGame = trackMetadata[currentTrack].game;
-    const songImg = 'trackImgs/' + songGame + '.jpg';
-    audioPlayer.src = 'tracks/' + currentTrack + '.mp3';
-    // set first track info and tracklist
-    uiTrackInfo.innerHTML = `<div><b>Song:</b>\u00A0${songName}</div><div><b>Game:</b>\u00A0${songGame}</div>`
-    document.title = `${songName} - ${songGame}`
-    if ("mediaSession" in navigator) {
-        navigator.mediaSession.metadata = new MediaMetadata({
-            title: songName,
-            artist: songGame,
-            artwork: [{ src: songImg }],
-        });
-    }
-    
+    setTrackInfo(currentTrack, songName, songGame);
 
     for (let i = 1; i < trackIDs.length; i++) {
         const trackIndex = trackIDs[i];
@@ -561,7 +564,6 @@ function initRandomPlaylist(){
         document.getElementById('tracklist').innerHTML += `<div class="tracklistItem" data-dex="${i}"><div><b>Song:</b>\u00A0${listSongName}</div><div><b>Game:</b>\u00A0${listSongGame}</div></div>`   
     }
 }
-
 initRandomPlaylist();
 
 // init next track in playlist function
@@ -581,18 +583,7 @@ function initNextTrack(){
     const currentTrack = trackIDs[currentTrackIndex];
     const songName = trackMetadata[currentTrack].name;
     const songGame = trackMetadata[currentTrack].game;
-    const songImg = 'trackImgs/' + songGame + '.jpg';
-    audioPlayer.src = 'tracks/' + currentTrack + '.mp3';
-
-    uiTrackInfo.innerHTML = `<div><b>Song:</b>\u00A0${songName}</div><div><b>Game:</b>\u00A0${songGame}</div>`
-    document.title = `${songName} - ${songGame}`
-    if ("mediaSession" in navigator) {
-        navigator.mediaSession.metadata = new MediaMetadata({
-            title: songName,
-            artist: songGame,
-            artwork: [{ src: songImg }],
-        });
-    }
+    setTrackInfo(currentTrack, songName, songGame);
 
     document.getElementById('tracklist').removeChild(document.getElementById('tracklist').querySelectorAll('.tracklistItem:not(.deleteMe)')[0])
 }
@@ -614,18 +605,7 @@ function initPreviousTrack(){
     const currentTrack = trackIDs[currentTrackIndex];
     const songName = trackMetadata[currentTrack].name;
     const songGame = trackMetadata[currentTrack].game;
-    const songImg = 'trackImgs/' + songGame + '.jpg';
-    uiTrackInfo.innerHTML = `<div><b>Song:</b>\u00A0${songName}</div><div><b>Game:</b>\u00A0${songGame}</div>`
-    audioPlayer.src = 'tracks/' + currentTrack + '.mp3';
-
-    document.title = `${songName} - ${songGame}`
-    if ("mediaSession" in navigator) {
-        navigator.mediaSession.metadata = new MediaMetadata({
-            title: songName,
-            artist: songGame,
-            artwork: [{ src: songImg }],
-        });
-    }
+    setTrackInfo(currentTrack, songName, songGame);
 
     const currentTrackActual = trackIDs[currentTrackIndexActual];
     const listSongName = trackMetadata[currentTrackActual].name;

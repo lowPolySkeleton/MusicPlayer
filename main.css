@@ -2,6 +2,9 @@
 *{
   box-sizing: border-box;
 }
+html{
+  --bgImg: url("trackImgs/Blast Corps.jpg");
+}
 body, html{
     width: 100%;
     height: 100%;
@@ -23,10 +26,6 @@ body{
     width: 100%;
     height: 100%;
     background: rgb(0, 0, 0, .8);
-    /* background: url('grad.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center; */
     overflow: hidden;
   }
   .uiPlayerWrapper{
@@ -164,73 +163,171 @@ body{
     position: relative;
     z-index: 2;
   }
-
-  @media (width < 1300px) {
-    .audioPlayerWrapper {
-      width: 100%;
-      height: 100%;
-      clip-path: none;
-    }
-    .uiPlayerWrapper{
-    align-items: center;
-    }
-    #trackInfo{
+@media (height >= 300px){
+  #trackInfo{
+    height: 80px;
+    overflow: hidden !important;
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
+    gap: 40px;
+    font-size: 45px;
+    line-height: 80%;
+    z-index: 2;
+    margin-top: 320px;
+  }
+  #trackInfo > div{
+    overflow: hidden !important;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  #trackPlayhead{
+    margin-top: 20px;
+  }
+  #trackPlayhead::after{
+    content: '';
+    width: 100%;
+    height: 300px;
+    left: 0px;
+    top: 20px;
+    background-image: var(--bgImg);
+    background-position: center center;
+    background-size: 300px 300px;
+    background-repeat: no-repeat;
+    position: absolute;
+    display: block;
+  }
+  #tracklist{
+    display: flex;
     flex-direction: column;
-    gap: 5px;
-    }
+    flex-wrap: nowrap;
+    gap: 20px;
+    margin-top: 40px;
+    font-size: 35px;
+    line-height: 80%;
+    height: calc(100% - 500px);
+    overflow: auto;
   }
-
-  @media (height < 100px) {
-    .audioPlayerWrapper {
-      width: 100%;
-      height: 100%;
-      clip-path: none;
-      padding: 10px 20px 8px 20px;
-    }
-    .uiPlayerWrapper{
-      height: 100%;
-      align-items: flex-start;
-      justify-content: flex-start;
-      flex-direction: row;
-      gap: 60px;
-    }
-    #tracklist{
-      display: none;
-    }
-    .uiPlayerWrapper > div{
-      width: auto;
-    }
-    #trackInfo{
-      width: 100%;
-      flex-direction: row;
-      padding-top: 3px;
-      gap: 60px;
-      line-height: 60%;
-      flex: 1 1 auto
-    }
-    #trackInfo > div{
-      white-space: nowrap;
-    }
-    #trackPlayhead{
-      width: 200%;
-      display: flex;
-      justify-content: flex-start;
-      gap: 10px;
-      align-items: flex-start;
-      flex-direction: row;
-      flex: 1 1 auto;
-      margin-top: 0px;
-    }
-    .audioTimelineCurrent{
-      order: 1
-    }
-    .audioControls{
-      width: 100%;
-      order: 2;
-      margin-top: auto;
-      margin-bottom: auto;
-    }
-    .audioTimelineTotal{
-      order: 3
-    }
+}
+@media (width < 1300px) {
+  .audioPlayerWrapper {
+    width: 100%;
+    height: 100%;
+    clip-path: none;
   }
+  .uiPlayerWrapper{
+  align-items: center;
+  }
+  #trackInfo{
+  flex-direction: column;
+  gap: 5px;
+  }
+}
+/* top bar stream view */
+@media (height < 100px) {
+  .audioPlayerWrapper {
+    width: 100%;
+    height: 100%;
+    clip-path: none;
+    padding: 10px;
+  }
+  .uiPlayerWrapper{
+    width: calc(100% - 70px);
+    margin-left: 70px;
+    height: 100%;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: row;
+    gap: 60px;
+  }
+  #tracklist{
+    display: none;
+  }
+  .uiPlayerWrapper > div{
+    width: auto;
+  }
+  #trackInfo{
+    width: 100%;
+    flex-direction: row;
+    padding-top: 3px;
+    gap: 60px;
+    line-height: 60%;
+    flex: 1 1 auto
+  }
+  #trackInfo > div{
+    white-space: nowrap;
+  }
+  #trackPlayhead{
+    width: 200%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: flex-start;
+    flex-direction: row;
+    flex: 1 1 auto;
+    margin-top: 5px;
+  }
+  #trackPlayhead::after{
+    content: '';
+    width: 60px;
+    height: 60px;
+    left: 0px;
+    top: 0px;
+    background-image: var(--bgImg);
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    display: block;
+  }
+  .audioTimelineCurrent{
+    order: 1
+  }
+  .audioControls{
+    width: 100%;
+    order: 2;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  .audioTimelineTotal{
+    order: 3
+  }
+}
+/* box art stream view */
+@media (height <= 180px) and (width = 600px){
+  .audioPlayerWrapper {
+    padding: 10px;
+  }
+  #tracklist{
+    display: none;
+  }
+  #trackInfo{
+    font-size: 35px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  #trackInfo > div{
+    overflow: hidden !important;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .uiPlayerWrapper{
+    width: calc(100% - 140px);
+    margin-left: 140px;
+  }
+  #trackPlayhead::after{
+    content: '';
+    width: 120px;
+    height: 120px;
+    left: 10px;
+    top: 10px;
+    background-image: var(--bgImg);
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    display: block;
+  }
+}
