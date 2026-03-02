@@ -636,19 +636,7 @@ function initTracklistTrack(dex){
     const currentTrack = trackIDs[dex];
     const songName = trackMetadata[currentTrack].name;
     const songGame = trackMetadata[currentTrack].game;
-    const songImg = 'trackImgs/' + songGame + '.jpg';
-    
-    uiTrackInfo.innerHTML = `<div><b>Song:</b>\u00A0${songName}</div><div><b>Game:</b>\u00A0${songGame}</div>`
-    audioPlayer.src = 'tracks/' + currentTrack + '.mp3';
-
-    document.title = `${songName} - ${songGame}`
-    if ("mediaSession" in navigator) {
-        navigator.mediaSession.metadata = new MediaMetadata({
-            title: songName,
-            artist: songGame,
-            artwork: [{ src: songImg }],
-        });
-    }
+    setTrackInfo(currentTrack, songName, songGame);
 
     let tracklistItems = document.getElementById('tracklist').getElementsByClassName('tracklistItem');
 
