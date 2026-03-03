@@ -506,6 +506,7 @@ var trackMetadata = {
 var trackIDs = Object.entries(trackMetadata).map(([key]) => key);
 
 const audioPlayer = document.getElementById('audioPlayer');
+audioPlayer.volume = .5
 const uiTrackInfo = document.getElementById('trackInfo');
 const uiAudioPercentage = document.getElementById('audioPlayer');
 const uiPercentage = document.getElementsByClassName('audioTimelineBarPercentage')[0];
