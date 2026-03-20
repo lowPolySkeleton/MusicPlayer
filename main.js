@@ -534,11 +534,42 @@ function shuffle(array) {
   }
 }
 
+function checkScroll(){
+    const elements = document.getElementsByClassName('scroll');
+
+    for(let element of elements){
+        const ptag = element.querySelector('p')
+        const pw = element.querySelector('p').offsetWidth;
+        const cw = element.offsetWidth;
+        const amount = (pw / cw * 100 - 100) / 2;
+        console.log(amount)
+
+        
+        if(pw > cw){
+            if (amount > 0 && amount <= 20){
+                ptag.classList.add('animate-scroll-20');
+            }
+            else if (amount > 20 && amount <= 40){
+                ptag.classList.add('animate-scroll-40');
+            }
+            else if (amount > 40 && amount <= 50){
+                ptag.classList.add('animate-scroll-50');
+            }
+            else if (amount > 50 && amount <= 70){
+                ptag.classList.add('animate-scroll-70');
+            }else{
+                ptag.classList.add('animate-scroll-100');
+            }
+        }
+    }
+}
+
 function setTrackInfo(track, name, game){
     const songImg = 'trackImgs/' + game + '.jpg';
     audioPlayer.src = 'tracks/' + track + '.mp3';
-    uiTrackInfo.innerHTML = `<div><b>Song:</b>\u00A0${name}</div><div><b>Game:</b>\u00A0${game}</div>`
+    uiTrackInfo.innerHTML = `<div class="scroll"><p><b>Song:</b>\u00A0${name}</p></div><div class="scroll"><p><b>Game:</b>\u00A0${game}</p></div>`
     document.documentElement.setAttribute("style", `--bgImg: url("${songImg}")`)
+    checkScroll();
 
     document.title = `${name} - ${game}`
     if ("mediaSession" in navigator) {
@@ -578,8 +609,6 @@ function initNextTrack(){
         // if it's not increase the track index
         currentTrackIndex = currentTrackIndex + 1;
     }
-
-    console.log(currentTrackIndex)
     
     const currentTrack = trackIDs[currentTrackIndex];
     const songName = trackMetadata[currentTrack].name;
@@ -631,8 +660,6 @@ uiCurrentTime.addEventListener('click', initPreviousTrack);
 function initTracklistTrack(dex){
     dex = Number(dex)
     currentTrackIndex = dex
-
-    console.log(currentTrackIndex)
 
     const currentTrack = trackIDs[dex];
     const songName = trackMetadata[currentTrack].name;
@@ -695,7 +722,6 @@ function calculateCurrentValue(currentTime) {
 function getDuration(event) {
   event.target.currentTime = 0
   event.target.removeEventListener('timeupdate', getDuration)
-  console.log(event.target.duration)
 }
 
 function initProgressBar() {

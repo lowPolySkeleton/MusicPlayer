@@ -20,13 +20,34 @@ body{
     align-items: center;
     background-color: rgba(0, 0, 0, 1);
 }
+#bgImg{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    opacity: .9;
+  }
+  #bgImg::after{
+    content: '';
+    display: block;
+    width: 130%;
+    height: 130%;
+    background-image: var(--bgImg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: blur(20px);
+  }
 .audioPlayerWrapper {
     position: relative;
     padding: 20px 50px 20px 50px;
     width: 100%;
     height: 100%;
-    background: rgb(0, 0, 0, .8);
-    overflow: hidden;
+    background: rgb(0, 0, 0, .7);
   }
   .uiPlayerWrapper{
     width: 100%;
@@ -35,6 +56,7 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
+    overflow: hidden;
   }
   #trackInfo{
     position: relative;
@@ -46,6 +68,85 @@ body{
     font-size: 45px;
     line-height: 80%;
     z-index: 2;
+  }
+  #trackInfo > .scroll{
+    width: 100%;
+  }
+  .scroll > p{
+    margin: 0;
+    display: inline-block;
+    position: relative;
+    text-overflow: clip;
+  }
+  .animate-scroll-20{
+    animation: scroll-20 10s linear alternate infinite;
+  }
+  .animate-scroll-40{
+    animation: scroll-40 13s linear alternate infinite;
+  }
+  .animate-scroll-50{
+    animation: scroll-50 16s linear alternate infinite;
+  }
+  .animate-scroll-70{
+    animation: scroll-70 19s linear alternate infinite;
+  }
+  .animate-scroll-100{
+    animation: scroll-100 23s linear alternate infinite;
+  }
+  @keyframes scroll-20 {
+    0% {
+      transform: translate(0);
+    }
+    30% {
+      transform: translate(0);
+    }
+    100% {
+      transform: translate(-20%);
+    }
+  }
+  @keyframes scroll-40 {
+    0% {
+      transform: translate(0);
+    }
+    20% {
+      transform: translate(0);
+    }
+    100% {
+      transform: translate(-40%);
+    }
+  }
+  @keyframes scroll-50 {
+    0% {
+      transform: translate(0);
+    }
+    20% {
+      transform: translate(0);
+    }
+    100% {
+      transform: translate(-50%);
+    }
+  }
+  @keyframes scroll-70 {
+    0% {
+      transform: translate(0);
+    }
+    20% {
+      transform: translate(0);
+    }
+    100% {
+      transform: translate(-70%);
+    }
+  }
+  @keyframes scroll-100 {
+    0% {
+      transform: translate(0);
+    }
+    20% {
+      transform: translate(0);
+    }
+    100% {
+      transform: translate(-100%);
+    }
   }
   #trackPlayhead{
     margin-top: 20px;
@@ -163,10 +264,13 @@ body{
     position: relative;
     z-index: 2;
   }
+  
 @media (height >= 300px){
+  #bgImg::after{
+    filter: blur(40px);
+  }
   #trackInfo{
     height: 80px;
-    overflow: hidden !important;
     position: relative;
     display: flex;
     justify-content: flex-start;
