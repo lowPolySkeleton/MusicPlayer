@@ -505,6 +505,26 @@ var trackMetadata = {
         "game": "Breath of Fire IV",
         "comp": "Yoshino Aoki"
     },
+    102:{
+        "name": "Krypton Garden",
+        "game": "Shatter",
+        "comp": ""
+    },
+    103:{
+        "name": "The Journey Is Your Companions",
+        "game": "Izuna 2",
+        "comp": ""
+    },
+    104:{
+        "name": "Jaw-Breaking News!",
+        "game": "TMNT - Shredders Revenge",
+        "comp": ""
+    },
+    105:{
+        "name": "We Ain't Came to Lose",
+        "game": "TMNT - Shredders Revenge",
+        "comp": ""
+    },
 }
 
 // create array from tracks
