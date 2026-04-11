@@ -34,21 +34,20 @@ body{
   #bgImg::after{
     content: '';
     display: block;
-    border: 1px solid red;
     width: 100%;
     height: 100%;
     background-image: var(--bgImg);
     background-position: center center;
-    background-size: cover;
+    background-size:cover;
     background-repeat: no-repeat;
-    filter: blur(20px);
+    filter: blur(100vw) saturate(3);
   }
 .audioPlayerWrapper {
     position: relative;
     padding: 20px 50px 20px 50px;
     width: 100%;
     height: 100%;
-    background: rgb(0, 0, 0, .6);
+    background: rgb(0, 0, 0, .55);
   }
   .uiPlayerWrapper{
     width: 100%;
