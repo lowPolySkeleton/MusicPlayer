@@ -29,7 +29,7 @@ body{
     align-items: center;
     top: 0;
     left: 0;
-    opacity: .9;
+    opacity: 1;
   }
   #bgImg::after{
     content: '';
@@ -204,7 +204,6 @@ body{
     left: 0;
     top: 0;
     height: 100%;
-    /* background: #fff; */
     background: url('grad.png');
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -328,6 +327,9 @@ body{
 }
 /* top bar stream view */
 @media (height < 100px) {
+  #bgImg::after{
+    filter: blur(25px) saturate(3);
+  }
   .audioPlayerWrapper {
     width: 100%;
     height: 100%;
@@ -397,7 +399,13 @@ body{
   }
 }
 /* box art stream view */
-@media (height <= 180px) and (width = 600px){
+@media (height = 140px) and (width = 600px){
+  #bgImg{
+    opacity: .9;
+  }
+  #bgImg::after{
+    filter: blur(30px) saturate(3);
+  }
   .audioPlayerWrapper {
     padding: 10px;
   }
