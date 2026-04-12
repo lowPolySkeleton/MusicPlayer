@@ -3,527 +3,527 @@ var trackMetadata = {
     1:{
         "name": "Underworld Forest",
         "game": "Last Bible III",
-        "vol": ""
+        "vol": .4
     },
     2:{
         "name": "Val Ship",
         "game": "Last Bible III",
-        "vol": ""
+        "vol": .5
     },
     3:{
         "name": "Dream of the Shore Near Another World",
         "game": "Chrono Cross",
-        "vol": ""
+        "vol": .35
     },
     4:{
         "name": "Underground Ruins",
         "game": "Threads of Fate",
-        "vol": ""
+        "vol": .3
     },
     5:{
         "name": "Stickerbush Symphony",
         "game": "Donkey Kong Country 2",
-        "vol": ""
+        "vol": .43
     },
     6:{
         "name": "Opening Stage (Above Ground)",
         "game": "Mega Man 8",
-        "vol": ""
+        "vol": .35
     },
     7:{
         "name": "Tengu Man Stage",
         "game": "Mega Man 8",
-        "vol": ""
+        "vol": .3
     },
     8:{
         "name": "Aqua Man Stage",
         "game": "Mega Man 8",
-        "vol": ""
+        "vol": .35
     },
     9:{
         "name": "Serenade of Respite (Day)",
         "game": "Sea of Stars",
-        "vol": ""
+        "vol": .43
     },
     10:{
         "name": "The Apple Market",
         "game": "Mega Man Legends",
-        "vol": ""
+        "vol": .5
     },
     11:{
         "name": "Hills of Intent: Future",
         "game": "the Messenger",
-        "vol": "Rainbowdragoneyes"
+        "vol": .27
     },
     12:{
         "name": "The Shopkeeper: Future",
         "game": "the Messenger",
-        "vol": "Rainbowdragoneyes"
+        "vol": .25
     },
     13:{
         "name": "Cosmic Temperance",
         "game": "Loop Hero",
-        "vol": "Aleksandr Goreslavets"
+        "vol": .4
     },
     14:{
         "name": "Credits",
         "game": "Kirbys Dream Land 3",
-        "vol": ""
+        "vol": .5
     },
     15:{
         "name": "Hit the Floor",
         "game": "Katana Zero",
-        "vol": "Thijs Lodewijk, Bill Kiley"
+        "vol": .2
     },
     16:{
         "name": "Zangief Theme",
         "game": "Super Street Fighter 2 Turbo",
-        "vol": "Yoko Shimomura"
+        "vol": .5
     },
     17:{
         "name": "Guile Theme",
         "game": "Super Street Fighter 2 Turbo",
-        "vol": "Yoko Shimomura"
+        "vol": .35
     },
     18:{
         "name": "Under the Rotting Pizza",
         "game": "Final Fantasy VII",
-        "vol": "Nobuo Uematsu"
+        "vol": .49
     },
     19:{
         "name": "Costa del Sol",
         "game": "Final Fantasy VII",
-        "vol": "Nobuo Uematsu"
+        "vol": .45
     },
     20:{
         "name": "Freya's Theme",
         "game": "Final Fantasy IX",
-        "vol": "Nobuo Uematsu"
+        "vol": .5
     },
     21:{
         "name": "Trisection",
         "game": "Final Fantasy Tactics",
-        "vol": "Hitoshi Sakimoto"
+        "vol": .4
     },
     22:{
         "name": "Hero's Theme",
         "game": "Final Fantasy Tactics",
-        "vol": "Hitoshi Sakimoto"
+        "vol": .5
     },
     23:{
         "name": "Main Theme",
         "game": "Space Harrier",
-        "vol": ""
+        "vol": .35
     },
     24:{
         "name": "Chemical Plant Zone",
         "game": "Sonic the Hedgehog 2",
-        "vol": "Masato Nakamura"
+        "vol": .2
     },
     25:{
         "name": "Out of His Mind",
         "game": "Breath of Fire IV",
-        "vol": "Yoshino Aoki"
+        "vol": .3
     },
     26:{
         "name": "Opening Animation",
         "game": "Breath of Fire IV",
-        "vol": "Yoshino Aoki"
+        "vol": .38
     },
     27:{
         "name": "Twilight Express",
         "game": "Battle Mania Daiginjou",
-        "vol": ""
+        "vol": .25
     },
     28:{
         "name": "Kokiri Forest",
         "game": "The Legend of Zelda Ocarina of Time",
-        "vol": "Koji Kondo"
+        "vol": .2
     },
     29:{
         "name": "Beach Theme",
         "game": "Plok",
-        "vol": "Tim Follin"
+        "vol": .22
     },
     30:{
         "name": "Naked Glow",
         "game": "Ridge Racer Type 4",
-        "vol": "Kohta Takahashi"
+        "vol": .3
     },
     31:{
         "name": "Out of Control",
         "game": "Revolt",
-        "vol": "Simon Robertson, Stephen Root, Larry Lush, Phil Earl, Dominic Glynn"
+        "vol": .27
     },
     32:{
         "name": "Black Winter Night Sky",
         "game": "TEKKEN 2",
-        "vol": "Yoshie Takayanagi"
+        "vol": .4
     },
     33:{
         "name": "Skerries",
         "game": "Blast Corps",
-        "vol": "Graeme Norgate"
+        "vol": .3
     },
     34:{
         "name": "Big Snowman",
         "game": "Snowboard Kids",
-        "vol": "Isao Kasai, Tomohiko Sato"
+        "vol": .35
     },
     35:{
         "name": "Sunny Mountain",
         "game": "Snowboard Kids 2",
-        "vol": "Isao Kasai, Tomohiko Sato"
+        "vol": .25
     },
     36:{
         "name": "Linda's Castle",
         "game": "Snowboard Kids 2",
-        "vol": "Isao Kasai, Tomohiko Sato"
+        "vol": .32
     },
     37:{
         "name": "Secret of the Forest",
         "game": "Chrono Trigger",
-        "vol": "Yasunori Mitsuda"
+        "vol": .38
     },
     38:{
         "name": "Corridors of Time",
         "game": "Chrono Trigger",
-        "vol": "Yasunori Mitsuda"
+        "vol": .43
     },
     39:{
         "name": "High Score",
         "game": "Gods",
-        "vol": ""
+        "vol": .35
     },
     40:{
         "name": "Dire Dire Docks",
         "game": "Super Mario 64",
-        "vol": "Koji Kondo"
+        "vol": .42
     },
     41:{
         "name": "Black Mage Village",
         "game": "Final Fantasy IX",
-        "vol": "Nobuo Uematsu"
+        "vol": .4
     },
     42:{
         "name": "Flutter vs The Gesellschaft",
         "game": "Mega Man Legends",
-        "vol": "Makoto Tomozawa"
+        "vol": .45
     },
     43:{
         "name": "Corneria",
         "game": "Star Fox",
-        "vol": "Hajime Hirasawa"
+        "vol": .29
     },
     44:{
         "name": "Flying Battery Zone Act 1",
         "game": "Sonic Mania",
-        "vol": "Tee Lopes"
+        "vol": .4
     },
     45:{
         "name": "Lava Reef Zone Act 1",
         "game": "Sonic & Knuckles",
-        "vol": ""
+        "vol": .35
     },
     46:{
         "name": "Idaten",
         "game": "Shinobi 3 Return Of The Ninja Master",
-        "vol": ""
+        "vol": .3
     },
     47:{
         "name": "OverDriver",
         "game": "Revolt",
-        "vol": ""
+        "vol": .2
     },
     48:{
         "name": "Rock Solid",
         "game": "Conkers Bad Fur Day",
-        "vol": "Robin Beanland"
+        "vol": .6
     },
     49:{
         "name": "Area A",
         "game": "Shatterhand",
-        "vol": ""
+        "vol": .35
     },
     50:{
         "name": "Cat",
         "game": "Minecraft",
-        "vol": ""
+        "vol": .8
     },
     51:{
         "name": "The Wind Can Be Still (Winter Theme)",
         "game": "Stardew Valley",
-        "vol": ""
+        "vol": .5
     },
     52:{
         "name": "Cleopactra",
         "game": "Ms Pac-Man Maze Madness",
-        "vol": ""
+        "vol": .42
     },
     53:{
         "name": "Strike the Earth! Plains of Passage",
         "game": "Shovel Knight",
-        "vol": ""
+        "vol": .35
     },
     54:{
         "name": "Last Surprise",
         "game": "Persona 5",
-        "vol": ""
+        "vol": .2
     },
     55:{
         "name": "Beware the Forest's Mushrooms",
         "game": "Super Mario RPG",
-        "vol": ""
+        "vol": .3
     },
     56:{
         "name": "Investigation ~ Cornered",
         "game": "Phoenix Wright Ace Attorney",
-        "vol": ""
+        "vol": .3
     },
     57:{
         "name": "Stamp Theme [Battle Version]",
         "game": "Final Fantasy VII Rebirth",
-        "vol": ""
+        "vol": .35
     },
     58:{
         "name": "Kyrie's Theme",
         "game": "Final Fantasy VII Rebirth",
-        "vol": ""
+        "vol": .4
     },
     59:{
         "name": "Radical Dreamers",
         "game": "Chrono Cross",
-        "vol": ""
+        "vol": .34
     },
     60:{
         "name": "Intro Theme",
         "game": "Mega Man 3",
-        "vol": ""
+        "vol": .35
     },
     61:{
         "name": "Level 1-2",
         "game": "Star Mazer DSP",
-        "vol": ""
+        "vol": .5
     },
     62:{
         "name": "A Ghost's Pumpkin Soup (Pumpkin Hill)",
         "game": "Sonic Adventure 2",
-        "vol": ""
+        "vol": .25
     },
     63:{
         "name": "That Name Was Engraved Into the 100th Volume!",
         "game": "Etrian Odyssey",
-        "vol": ""
+        "vol": .3
     },
     64:{
         "name": "Sky Tower",
         "game": "Kirbys Return to Dreamland",
-        "vol": ""
+        "vol": .45
     },
     65:{
         "name": "Toxic Caves",
         "game": "Sonic the Hedgehog Spinball",
-        "vol": ""
+        "vol": .4
     },
     66:{
         "name": "You Will Know Our Names",
         "game": "Xenoblade Chronicles",
-        "vol": ""
+        "vol": .28
     },
     67:{
         "name": "Wave Circuit (Medley's Theme)",
         "game": "Gravity Circuit",
-        "vol": ""
+        "vol": .25
     },
     68:{
         "name": "Color Your Night",
         "game": "Persona 3 Reload",
-        "vol": ""
+        "vol": .28
     },
     69:{
         "name": "Battle at the Big Bridge",
         "game": "Final Fantasy V",
-        "vol": ""
+        "vol": .4
     },
     70:{
         "name": "Wave 131",
         "game": "Streets Of Rage 2",
-        "vol": ""
+        "vol": .5
     },
     71:{
         "name": "Ocean Palace",
         "game": "Sonic Heroes",
-        "vol": ""
+        "vol": .28
     },
     72:{
         "name": "Arena 1",
         "game": "One Must Fall 2097",
-        "vol": ""
+        "vol": .8
     },
     73:{
         "name": "Lava Reef Zone Act 2",
         "game": "Sonic Mania",
-        "vol": ""
+        "vol": .48
     },
     74:{
         "name": "Flim Flam",
         "game": "Tetrisphere",
-        "vol": ""
+        "vol": .35
     },
     75:{
         "name": "Redial HD",
         "game": "Bomberman Hero",
-        "vol": ""
+        "vol": .5
     },
     76:{
         "name": "Monoco",
         "game": "Clair Obscur Expedition 33",
-        "vol": ""
+        "vol": .3
     },
     77:{
         "name": "Staff Roll",
         "game": "Super Mario 64",
-        "vol": ""
+        "vol": .5
     },
     78:{
         "name": "Cabin",
         "game": "Friday The 13th",
-        "vol": ""
+        "vol": .3
     },
     79:{
         "name": "Big Airship",
         "game": "Pop N Twinbee",
-        "vol": ""
+        "vol": .45
     },
     80:{
         "name": "Level 1",
         "game": "Silver Surfer",
-        "vol": ""
+        "vol": .5
     },
     81:{
         "name": "Mission 5",
         "game": "Stellar Assault",
-        "vol": ""
+        "vol": .4
     },
     82:{
         "name": "Neon Night-Riders",
         "game": "Turtles in Time",
-        "vol": ""
+        "vol": .35
     },
     83:{
         "name": "Tidal Surge",
         "game": "Vectorman",
-        "vol": ""
+        "vol": .8
     },
     84:{
         "name": "Rusty Ruins Zone (Act 2)",
         "game": "Sonic 3D Blast (Saturn)",
-        "vol": ""
+        "vol": .5
     },
     85:{
         "name": "Steam Gardens",
         "game": "Super Mario Odyssey",
-        "vol": ""
+        "vol": .4
     },
     86:{
         "name": "Metal Beat Part 3",
         "game": "Metal Masters",
-        "vol": ""
+        "vol": .22
     },
     87:{
         "name": "Aqua Star Theme",
         "game": "Kirby 64 The Crystal Shards",
-        "vol": ""
+        "vol": .4
     },
     88:{
         "name": "Area 1",
         "game": "Blaster Master",
-        "vol": ""
+        "vol": .5
     },
     89:{
         "name": "Level 3",
         "game": "Star Mazer DSP",
-        "vol": ""
+        "vol": .55
     },
     90:{
         "name": "Ray of Hope",
         "game": "Corpse Party",
-        "vol": ""
+        "vol": .25
     },
     91:{
         "name": "The Last Desperate Struggle",
         "game": "Ghost Trick Phantom Detective",
-        "vol": ""
+        "vol": .25
     },
     92:{
         "name": "Stage 1",
         "game": "Advanced Busterhawk Gleylancer",
-        "vol": ""
+        "vol": .3
     },
     93:{
         "name": "Flood of Power",
         "game": "Midnight Resistance",
-        "vol": ""
+        "vol": .3
     },
     94:{
         "name": "Stage 1.1",
         "game": "Sparkster",
-        "vol": ""
+        "vol": .25
     },
     95:{
         "name": "Outride a Crisis",
         "game": "Super Hang-On",
-        "vol": ""
+        "vol": .3
     },
     96:{
         "name": "Opening Theme",
         "game": "Traysia",
-        "vol": ""
+        "vol": .15
     },
     97:{
         "name": "A Memory That Cannot Be Pursued",
         "game": "Soma Bringer",
-        "vol": "Yasunori Mitsuda"
+        "vol": .4
     },
     98:{
         "name": "Marlin Fight",
         "game": "The Blue Marlin",
-        "vol": ""
+        "vol": .4
     },
     99:{
         "name": "Part Man, Part Ant",
         "game": "Grounded",
-        "vol": ""
+        "vol": .28
     },
     100:{
         "name": "Noble Spirit",
         "game": "Grounded",
-        "vol": ""
+        "vol": .43
     },
     101:{
         "name": "Take the Winnings and Run",
         "game": "Breath of Fire IV",
-        "vol": "Yoshino Aoki"
+        "vol": .9
     },
     102:{
         "name": "Krypton Garden",
         "game": "Shatter",
-        "vol": ""
+        "vol": .25
     },
     103:{
         "name": "The Journey Is Your Companions",
         "game": "Izuna 2",
-        "vol": ""
+        "vol": .3
     },
     104:{
         "name": "Jaw-Breaking News!",
         "game": "TMNT - Shredders Revenge",
-        "vol": ""
+        "vol": .2
     },
     105:{
         "name": "We Ain't Came to Lose",
         "game": "TMNT - Shredders Revenge",
-        "vol": ""
+        "vol": .25
     },
 }
 
@@ -589,9 +589,15 @@ function checkScroll(){
     }
 }
 
-function setTrackInfo(track, name, game){
+function setTrackInfo(track, name, game, vol){
     const songImg = 'trackImgs/' + game + '.jpg';
     audioPlayer.src = 'tracks/' + track + '.mp3';
+    if (vol){
+        audioPlayer.volume = vol
+    }else{
+        audioPlayer.volume = .5
+    }
+    
     uiTrackInfo.innerHTML = `<div class="scroll"><p><b>Song:</b>\u00A0${name}</p></div><div class="scroll"><p><b>Game:</b>\u00A0${game}</p></div>`
     document.documentElement.setAttribute("style", `--bgImg: url("${songImg}")`)
     checkScroll();
@@ -612,7 +618,8 @@ function initRandomPlaylist(){
     const currentTrack = trackIDs[currentTrackIndex];
     const songName = trackMetadata[currentTrack].name;
     const songGame = trackMetadata[currentTrack].game;
-    setTrackInfo(currentTrack, songName, songGame);
+    const songVol = trackMetadata[currentTrack].vol;
+    setTrackInfo(currentTrack, songName, songGame, songVol);
 
     for (let i = 1; i < trackIDs.length; i++) {
         const trackIndex = trackIDs[i];
@@ -638,7 +645,8 @@ function initNextTrack(){
     const currentTrack = trackIDs[currentTrackIndex];
     const songName = trackMetadata[currentTrack].name;
     const songGame = trackMetadata[currentTrack].game;
-    setTrackInfo(currentTrack, songName, songGame);
+    const songVol = trackMetadata[currentTrack].vol;
+    setTrackInfo(currentTrack, songName, songGame, songVol);
 
     document.getElementById('tracklist').removeChild(document.getElementById('tracklist').querySelectorAll('.tracklistItem:not(.deleteMe)')[0])
 }
@@ -660,7 +668,8 @@ function initPreviousTrack(){
     const currentTrack = trackIDs[currentTrackIndex];
     const songName = trackMetadata[currentTrack].name;
     const songGame = trackMetadata[currentTrack].game;
-    setTrackInfo(currentTrack, songName, songGame);
+    const songVol = trackMetadata[currentTrack].vol;
+    setTrackInfo(currentTrack, songName, songGame, songVol);
 
     const currentTrackActual = trackIDs[currentTrackIndexActual];
     const listSongName = trackMetadata[currentTrackActual].name;
@@ -689,7 +698,8 @@ function initTracklistTrack(dex){
     const currentTrack = trackIDs[dex];
     const songName = trackMetadata[currentTrack].name;
     const songGame = trackMetadata[currentTrack].game;
-    setTrackInfo(currentTrack, songName, songGame);
+    const songVol = trackMetadata[currentTrack].vol;
+    setTrackInfo(currentTrack, songName, songGame, songVol);
 
     let tracklistItems = document.getElementById('tracklist').getElementsByClassName('tracklistItem');
 
