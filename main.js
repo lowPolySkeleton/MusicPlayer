@@ -313,7 +313,7 @@ var trackMetadata = {
     63:{
         "name": "That Name Was Engraved Into the 100th Volume!",
         "game": "Etrian Odyssey",
-        "vol": .3
+        "vol": .2
     },
     64:{
         "name": "Sky Tower",
@@ -498,7 +498,7 @@ var trackMetadata = {
     100:{
         "name": "Noble Spirit",
         "game": "Grounded",
-        "vol": .43
+        "vol": .3
     },
     101:{
         "name": "Take the Winnings and Run",
@@ -508,7 +508,7 @@ var trackMetadata = {
     102:{
         "name": "Krypton Garden",
         "game": "Shatter",
-        "vol": .25
+        "vol": .2
     },
     103:{
         "name": "The Journey Is Your Companions",
@@ -523,6 +523,11 @@ var trackMetadata = {
     105:{
         "name": "We Ain't Came to Lose",
         "game": "TMNT - Shredders Revenge",
+        "vol": .25
+    },
+    106:{
+        "name": "The Commissioner",
+        "game": "Streets of Rage 4",
         "vol": .25
     },
 }
