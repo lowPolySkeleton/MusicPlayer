@@ -530,6 +530,16 @@ var trackMetadata = {
         "game": "Streets of Rage 4",
         "vol": .25
     },
+    107:{
+        "name": "A Chance Meeting",
+        "game": "Threads of Fate",
+        "vol": .35
+    },
+    108:{
+        "name": "Boss - Monster Karasu",
+        "game": "Soul of the Samurai",
+        "vol": .4
+    },
 }
 
 // create array from tracks
