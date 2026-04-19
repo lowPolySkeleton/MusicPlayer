@@ -540,6 +540,11 @@ var trackMetadata = {
         "game": "Soul of the Samurai",
         "vol": .4
     },
+    109:{
+        "name": "A Warring God",
+        "game": "Breath of Fire IV",
+        "vol": .65
+    },
 }
 
 // create array from tracks
