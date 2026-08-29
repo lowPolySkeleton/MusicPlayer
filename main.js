@@ -549,7 +549,27 @@ var trackMetadata = {
         "name": "Theory of Everything (Mirror's End)",
         "game": "Mina the Hollower",
         "vol": .17
-    }
+    },
+    111:{
+        "name": "Treasure Hunter Nigel",
+        "game": "Landstalker",
+        "vol": .46
+    },
+    112:{
+        "name": "Heh Heh, Think I'll Disrupt This Good Cheer",
+        "game": "Landstalker",
+        "vol": .55
+    },
+    113:{
+        "name": "Spirit of the Night",
+        "game": "Secret of Mana",
+        "vol": .65
+    },
+    114:{
+        "name": "Into the Thick of it",
+        "game": "Secret of Mana",
+        "vol": .65
+    },
 }
 
 // create array from tracks

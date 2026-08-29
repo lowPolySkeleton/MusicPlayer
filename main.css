@@ -20,6 +20,14 @@ body{
     align-items: center;
     background-color: rgba(0, 0, 0, 1);
 }
+@keyframes spin {
+    from{
+      transform: rotate(0deg);
+    }
+    to{
+      transform: rotate(360deg);
+    }
+  }
 #bgImg{
     width: 100vw;
     height: 100vh;
@@ -299,15 +307,7 @@ body{
     background-repeat: no-repeat;
     position: absolute;
     display: block;
-    animation: spin 5s linear forwards infinite;
-  }
-  @keyframes spin {
-    from{
-      transform: rotate(0deg);
-    }
-    to{
-      transform: rotate(360deg);
-    }
+    animation: spin 8s linear forwards infinite;
   }
   #tracklist{
     display: flex;
@@ -405,15 +405,7 @@ body{
     border: 1px solid grey;
     position: absolute;
     display: block;
-    animation: spin 5s linear forwards infinite;
-  }
-  @keyframes spin {
-    from{
-      transform: rotate(0deg);
-    }
-    to{
-      transform: rotate(360deg);
-    }
+    animation: spin 8s linear forwards infinite;
   }
   .audioTimelineCurrent{
     order: 1
