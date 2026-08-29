@@ -399,7 +399,7 @@ body{
     top: 5px;
     background-image: var(--bgImg);
     background-position: center center;
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     border-radius: 50%;
     border: 1px solid grey;
