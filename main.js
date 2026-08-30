@@ -775,8 +775,10 @@ document.addEventListener("click", function(e){
 function playPause(){
     if (audioPlayer.duration > 0 && !audioPlayer.paused) {
         audioPlayer.pause();
+        navigator.mediaSession.playbackState = "paused"
     } else {
         audioPlayer.play();
+        navigator.mediaSession.playbackState = "playing"
     }
 }
 
