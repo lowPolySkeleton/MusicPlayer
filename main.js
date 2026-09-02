@@ -570,6 +570,61 @@ var trackMetadata = {
         "game": "Secret of Mana",
         "vol": .65
     },
+    115:{
+        "name": "Zue",
+        "game": "Terranigma",
+        "vol": .68
+    },
+    116:{
+        "name": "Laboratory",
+        "game": "Terranigma",
+        "vol": .68
+    },
+    117:{
+        "name": "Forest Interlude",
+        "game": "Donkey Kong Country 2",
+        "vol": .43
+    },
+    118:{
+        "name": "Unknown World",
+        "game": "Dragon Quest III",
+        "vol": .65
+    },
+    119:{
+        "name": "Opening Stage X",
+        "game": "Mega Man X4",
+        "vol": .45
+    },
+    120:{
+        "name": "Neat Freak",
+        "game": "Moldwasher",
+        "vol": .58
+    },
+    121:{
+        "name": "Skin Theme (fight)",
+        "game": "Pathogenic",
+        "vol": .45
+    },
+    122:{
+        "name": "October Child",
+        "game": "Napple Tale: Arsia in Daydream",
+        "vol": .45
+    },
+    123:{
+        "name": "BGM 09",
+        "game": "Super Producers: Mezase Show Biz Kai",
+        "vol": .45
+    },
+    124:{
+        "name": "Rolling Start!",
+        "game": "Daytona USA",
+        "vol": .50
+    },
+    125:{
+        "name": "Get on the Bus",
+        "game": "Earthbound",
+        "vol": .68
+    },
 }
 
 // create array from tracks
