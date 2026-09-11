@@ -625,6 +625,21 @@ var trackMetadata = {
         "game": "Earthbound",
         "vol": .68
     },
+    126:{
+        "name": "Feel the Heat",
+        "game": "Sega Bass Fishing",
+        "vol": .50
+    },
+    127:{
+        "name": "Dudley's Theme",
+        "game": "Street Fighter III: 3rd Strike",
+        "vol": .68
+    },
+    128:{
+        "name": "The Glitch",
+        "game": "MURDER HOUSE",
+        "vol": .62
+    },
 }
 
 // create array from tracks
