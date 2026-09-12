@@ -308,6 +308,21 @@ body{
     position: absolute;
     display: block;
     animation: spin 8s linear forwards infinite;
+    z-index: 1;
+  }
+  #trackPlayhead::before{
+    z-index: 2;
+    box-sizing: border-box;
+    content: '';
+    display: block;
+    width: 15px;
+    height: 15px;
+    left: calc(50% - 10px);
+    top: 160px;
+    background: #000;
+    position: absolute;
+    border-radius: 50%;
+    outline: 35px solid #c6c6c6;
   }
   #tracklist{
     display: flex;
@@ -406,6 +421,21 @@ body{
     position: absolute;
     display: block;
     animation: spin 8s linear forwards infinite;
+    z-index: 1;
+  }
+  #trackPlayhead::before{
+    z-index: 2;
+    box-sizing: border-box;
+    content: '';
+    display: block;
+    width: 5px;
+    height: 5px;
+    left: 49px;
+    top: 49px;
+    background: #000;
+    position: absolute;
+    border-radius: 50%;
+    outline: 10px solid #c6c6c6;
   }
   .audioTimelineCurrent{
     order: 1
@@ -420,45 +450,4 @@ body{
     order: 3
   }
 }
-/* box art stream view */
-@media (height = 140px) and (width = 600px){
-  #bgImg{
-    opacity: .9;
-  }
-  #bgImg::after{
-    filter: blur(30px) saturate(3);
-  }
-  .audioPlayerWrapper {
-    padding: 10px;
-  }
-  #tracklist{
-    display: none;
-  }
-  #trackInfo{
-    font-size: 35px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  #trackInfo > div{
-    overflow: hidden !important;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-  }
-  .uiPlayerWrapper{
-    width: calc(100% - 140px);
-    margin-left: 140px;
-  }
-  #trackPlayhead::after{
-    content: '';
-    width: 120px;
-    height: 120px;
-    left: 10px;
-    top: 10px;
-    background-image: var(--bgImg);
-    background-position: center center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    position: absolute;
-    display: block;
-  }
-}
+
