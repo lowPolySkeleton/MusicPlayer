@@ -640,6 +640,16 @@ var trackMetadata = {
         "game": "MURDER HOUSE",
         "vol": .62
     },
+    129:{
+        "name": "Comatose Depths",
+        "game": "Yumeria",
+        "vol": .38
+    },
+    130:{
+        "name": "Ideal",
+        "game": "Ikaruga",
+        "vol": .50
+    },
 }
 
 // create array from tracks
